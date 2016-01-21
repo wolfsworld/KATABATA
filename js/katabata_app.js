@@ -1,5 +1,5 @@
-document.addEventListener("deviceready", onDeviceReady, false);
-function onDeviceReady() {
+//document.addEventListener("deviceready", onDeviceReady, false);
+//function onDeviceReady() {
 	
 $(document).ready(function(){
 var ct=0;
@@ -147,6 +147,6 @@ clearInterval(tid);
 }
 
 });//document ready
-}
+//}
 
 

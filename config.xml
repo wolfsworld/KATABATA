@@ -12,7 +12,7 @@
     <author email="info@mopli.net" href="http://mopli.net">
         PhoneGap Team
     </author>
-    <access origin="http://jeffersonlibrary.net/INTERMED.php" />
+    <access origin="http://wolfsworld1.com/KATABATA/" />
     <access origin="*" />
     <gap:plugin name="cordova-plugin-whitelist" source="npm" />
     <gap:plugin name="cordova-plugin-barcodescanner" source="npm" />
