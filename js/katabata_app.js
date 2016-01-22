@@ -16,10 +16,9 @@ exercises.push(new Media("sounds/ex1.mp3"));
 exercises.push(new Media("sounds/ex1.mp3"));
 
 
-alert(sounds[0]);
-alert(exercises[1]);
+var my_media = new Media("sounds/ex1.mp3");
+my_media.play();
 
-exercises[0].play();
 /*sounds.push([sound1,new Media("sound/sound1.mp3")]);
 sounds.push([sound2,new Media("sound/sound1.mp3")]);
 sounds.push([sound3,new Media("sound/sound1.mp3")]);
