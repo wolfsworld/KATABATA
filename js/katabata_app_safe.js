@@ -1,5 +1,5 @@
-//document.addEventListener("deviceready", onDeviceReady, false);
-//function onDeviceReady() {
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
 	
 var sounds = [];
 var exercises = [];
@@ -17,9 +17,7 @@ exercises.push(new Media("sounds/ex1.mp3"));
 
 
 alert(sounds[0]);
-alert(exercises[1]);
 
-exercises[0].play();
 /*sounds.push([sound1,new Media("sound/sound1.mp3")]);
 sounds.push([sound2,new Media("sound/sound1.mp3")]);
 sounds.push([sound3,new Media("sound/sound1.mp3")]);
@@ -37,8 +35,8 @@ exercises.push([med7,new Media("sound/voice001.mp3")]);*/
 $(document).ready(function(){
 var ct=0;
 var z=0;
-var sound_ex0=sounds;
-var sound_ex2=exercises;
+var sound_ex0=$('.ex0');
+var sound_ex2=$('.ex2');
 var tid;
 var running=false;
 //Select random exercise
@@ -62,13 +60,13 @@ $('#displayer').empty();
 $('#container').css("display", "none");
 
 for(var i=0; i<sound_ex0.length; i++){
-
-sound_ex0[i].stop();
+sound_ex0[i].pause();
+sound_ex0[i].currentTime=0;
 }
 
 for(var i=0; i<sound_ex2.length; i++){
-
-sound_ex2[i].stop();
+sound_ex2[i].pause();
+sound_ex2[i].currentTime=0;
 }
 
 var exc=pick;
@@ -87,7 +85,8 @@ function exercise(exc){
 running=true;
 $('#rd_counter').append('Round #1 of 8');
 sound_ex2[exc].play();
-if(sound_ex2[exc].MEDIA_STOPPED==4){
+sound_ex2[exc].onended = function(){
+
 //go to play GO
 go_ex('g');
 }
@@ -95,15 +94,15 @@ go_ex('g');
 
 function go_ex(g){
 	sound_ex0[0].play();//play GO
-	if(sound_ex0[exc].MEDIA_STOPPED==4){
+	sound_ex0[0].onended = function(){
 		//go to countdown
 		countdown1('g');
 	}
 }
 
 function rest_ex(r){
-	sound_ex0[1].play();
-	if(sound_ex2[exc].MEDIA_STOPPED==4){
+	sound_ex0[2].play();
+	sound_ex0[2].onended = function(){
 		//go to countdown
 		countdown1('r');
 	}
@@ -121,13 +120,13 @@ function countdown(v,z,d){
 	//alert(z);
 $('#container').css("display", "block");
 	  if(v=='g'){
-	  sound_ex0[2].play();
-	  if(sound_ex0[2].MEDIA_STOPPED==4){
+	  sound_ex0[1].play();
+	  sound_ex0[1].onended = function(){
 	  abort(z,d);
 	  }
 	  } else{
-	  sound_ex0[3].play();
-	  if(sound_ex0[3].MEDIA_STOPPED==4){
+		  sound_ex0[4].play();
+		  sound_ex0[4].onended = function(){
 		  abort(z,d);
 	  }
 }//function countdown
@@ -160,7 +159,7 @@ $('#displayer').empty();
 			  }
 			  else{ 
 				$('#container').css("display", "none");
-				sound_ex0[4].play();
+				sound_ex0[3].play();
 				alert('done!');
 				$('#rd_counter').empty();
 				$('#displayer').empty();
@@ -179,6 +178,6 @@ clearInterval(tid);
 }
 
 });//document ready
-//}
+}
 
 

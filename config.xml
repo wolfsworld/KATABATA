@@ -14,8 +14,8 @@
     </author>
     <access origin="http://wolfsworld1.com/KATABATA/" />
     <access origin="*" />
-    <gap:plugin name="cordova-plugin-whitelist" source="npm" />
-    <gap:plugin name="cordova-plugin-barcodescanner" source="npm" />
+    <plugin name="org.apache.cordova.media" spec="0.2.8" source="pgb" />
+	<gap:plugin name="cordova-plugin-whitelist" source="npm" />
 	<gap:plugin name="cordova-plugin-device" source="npm" />
 	<gap:plugin name="cordova-plugin-network-information" spec="1.0.1" source="pgb" />
 	<gap:plugin name="cordova-plugin-camera" source="npm"  />
@@ -26,7 +26,6 @@
 	 		<param name="ios-package" value="CDVStatusBar" onload="true" />
 	 	</feature>
 	<gap:plugin name="hu.dpal.phonegap.plugins.spinnerdialog" />
-	<gap:plugin name="nl.x-services.plugins.flashlight" />
 	<gap:plugin name="uk.co.workingedge.phonegap.plugin.launchnavigator" version="2.1.0" />
     <preference name="phonegap-version" value="cli-5.2.0" />
 	<preference name="orientation" value="default" />
