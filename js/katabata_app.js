@@ -27,8 +27,9 @@ exercises.push(new Media(""+mediaURL+"sounds/ex1.mp3"));
 
 alert(mediaURL);
 
-var my_media = new Media(""+mediaURL+"ex1.mp3", MediaSuccess, MediaError, MediaStatus);
-alert(my_media.MediaStatus);
+var my_media = new Media(""+mediaURL+"ex1.mp3");
+var infor=my_media.MediaStatus;
+alert(infor);
 my_media.play();
 
 function playAudio(url) {
