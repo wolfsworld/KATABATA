@@ -4,19 +4,29 @@ function onDeviceReady() {
 var sounds = [];
 var exercises = [];
 
+function checkplatform(){
+if(device.platform.toLowerCase() === "android"){
+	return "/android_asset/www/";
+}
+else{
+	return '';
+}
+}
 
-sounds.push(new Media("sounds/go.mp3"));
-sounds.push(new Media("sounds/rest.mp3"));
-sounds.push(new Media("sounds/whip.mp3"));
-sounds.push(new Media("sounds/heartbeat.mp3"));
-sounds.push(new Media("sounds/applause.mp3"));
+var mediaURL=checkplatform();
+
+sounds.push(new Media(""+mediaURL+"sounds/go.mp3"));
+sounds.push(new Media(""+mediaURL+"sounds/rest.mp3"));
+sounds.push(new Media(""+mediaURL+"sounds/whip.mp3"));
+sounds.push(new Media(""+mediaURL+"sounds/heartbeat.mp3"));
+sounds.push(new Media(""+mediaURL+"sounds/applause.mp3"));
 	
-exercises.push(new Media("sounds/ex1.mp3"));
-exercises.push(new Media("sounds/ex1.mp3"));
-exercises.push(new Media("sounds/ex1.mp3"));
+exercises.push(new Media(""+mediaURL+"sounds/ex1.mp3"));
+exercises.push(new Media(""+mediaURL+"sounds/ex1.mp3"));
+exercises.push(new Media(""+mediaURL+"sounds/ex1.mp3"));
 
 
-var my_media = new Media("sounds/ex1.mp3");
+var my_media = new Media(""+mediaURL+"sounds/ex1.mp3", NULL, MediaError);
 my_media.play();
 
 /*sounds.push([sound1,new Media("sound/sound1.mp3")]);
