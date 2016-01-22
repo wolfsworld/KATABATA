@@ -9,7 +9,7 @@ if(device.platform.toLowerCase() === "android"){
 	return "/android_asset/www/";
 }
 else{
-	return '';
+	return 'no_android';
 }
 }
 
@@ -25,8 +25,9 @@ exercises.push(new Media(""+mediaURL+"sounds/ex1.mp3"));
 exercises.push(new Media(""+mediaURL+"sounds/ex1.mp3"));
 exercises.push(new Media(""+mediaURL+"sounds/ex1.mp3"));
 
+alert(mediaURL);
 
-var my_media = new Media(""+mediaURL+"sounds/ex1.mp3", NULL, MediaError);
+var my_media = new Media(""+mediaURL+"ex1.mp3", NULL, MediaError);
 my_media.play();
 
 /*sounds.push([sound1,new Media("sound/sound1.mp3")]);
