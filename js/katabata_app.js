@@ -15,7 +15,7 @@ else{
 
 var mediaURL=checkplatform();
 
-sounds.push(new Media(""+mediaURL+"sounds/go.mp3"));
+/*sounds.push(new Media(""+mediaURL+"sounds/go.mp3"));
 sounds.push(new Media(""+mediaURL+"sounds/rest.mp3"));
 sounds.push(new Media(""+mediaURL+"sounds/whip.mp3"));
 sounds.push(new Media(""+mediaURL+"sounds/heartbeat.mp3"));
@@ -24,7 +24,7 @@ sounds.push(new Media(""+mediaURL+"sounds/applause.mp3"));
 exercises.push(new Media(""+mediaURL+"sounds/ex1.mp3"));
 exercises.push(new Media(""+mediaURL+"sounds/ex1.mp3"));
 exercises.push(new Media(""+mediaURL+"sounds/ex1.mp3"));
-
+*/
 alert(mediaURL);
 
 var my_media = new Media(""+mediaURL+"ex1.mp3");
