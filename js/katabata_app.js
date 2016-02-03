@@ -4,16 +4,16 @@ function onDeviceReady() {
 var sounds = [];
 var exercises = [];
 
-function checkplatform(){
+/*function checkplatform(){
 if(device.platform.toLowerCase() === "android"){
 	return "/android_asset/www/";
 }
 else{
 	return '';
 }
-}
+}*/
 
-var mediaURL=checkplatform();
+//var mediaURL=checkplatform();
 
 /*sounds.push(new Media(""+mediaURL+"sounds/go.mp3"));
 sounds.push(new Media(""+mediaURL+"sounds/rest.mp3"));
@@ -27,16 +27,16 @@ exercises.push(new Media(""+mediaURL+"sounds/ex1.mp3"));
 */
 alert(mediaURL);
 
-var my_media = new Media(""+mediaURL+"ex1.mp3");
-var infor=my_media.MediaStatus;
-alert(infor);
+//var my_media = new Media("sounds/ex1.mp3");
+//var infor=my_media.MediaStatus;
+//alert(infor);
 
 
 
-var my_media = new Media(""+mediaURL+"sounds/ex1.mp3", NULL, MediaError);
+var my_media = new Media("sounds/ex1.mp3", NULL, MediaError);
 my_media.play();
 
-function playAudio(url) {
+/*function playAudio(url) {
     // Play the audio file at url
     var my_media = new Media(url,
         // success callback
@@ -50,7 +50,7 @@ function playAudio(url) {
     );
     // Play audio
     my_media.play();
-}
+}*/
 
 /*sounds.push([sound1,new Media("sound/sound1.mp3")]);
 sounds.push([sound2,new Media("sound/sound1.mp3")]);
