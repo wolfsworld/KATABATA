@@ -5,7 +5,7 @@ var sounds = [];
 var exercises = [];
 
 
-sounds.push(new Media("sounds/go.mp3"));
+/*sounds.push(new Media("sounds/go.mp3"));
 sounds.push(new Media("sounds/rest.mp3"));
 sounds.push(new Media("sounds/whip.mp3"));
 sounds.push(new Media("sounds/heartbeat.mp3"));
@@ -14,9 +14,12 @@ sounds.push(new Media("sounds/applause.mp3"));
 exercises.push(new Media("sounds/ex1.mp3"));
 exercises.push(new Media("sounds/ex1.mp3"));
 exercises.push(new Media("sounds/ex1.mp3"));
+*/
+var my_media=new Media("/android_asset/www/sounds/go.mp3");
+my_media.play();
 
 
-alert(sounds[0]);
+//alert(sounds[0]);
 
 /*sounds.push([sound1,new Media("sound/sound1.mp3")]);
 sounds.push([sound2,new Media("sound/sound1.mp3")]);
