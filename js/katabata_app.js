@@ -9,7 +9,7 @@ if(device.platform.toLowerCase() === "android"){
 	return "/android_asset/www/";
 }
 else{
-	return 'no_android';
+	return '';
 }
 }
 
@@ -30,6 +30,10 @@ alert(mediaURL);
 var my_media = new Media(""+mediaURL+"ex1.mp3");
 var infor=my_media.MediaStatus;
 alert(infor);
+
+
+
+var my_media = new Media(""+mediaURL+"sounds/ex1.mp3", NULL, MediaError);
 my_media.play();
 
 function playAudio(url) {
