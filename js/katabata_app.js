@@ -15,18 +15,19 @@ else{
 
 var mediaURL=checkplatform();
 
-sounds.push(new Media(""+mediaURL+"sounds/go.mp3"));
-sounds.push(new Media(""+mediaURL+"sounds/rest.mp3"));
-sounds.push(new Media(""+mediaURL+"sounds/whip.mp3"));
-sounds.push(new Media(""+mediaURL+"sounds/heartbeat.mp3"));
-sounds.push(new Media(""+mediaURL+"sounds/applause.mp3"));
+sounds.push(new Media(""+mediaURL+"sounds/go.mp3",onSuccess, onError, onStatus));
+sounds.push(new Media(""+mediaURL+"sounds/rest.mp3",onSuccess, onError, onStatus));
+sounds.push(new Media(""+mediaURL+"sounds/whip.mp3",onSuccess, onError, onStatus));
+sounds.push(new Media(""+mediaURL+"sounds/heartbeat.mp3",onSuccess, onError, onStatus));
+sounds.push(new Media(""+mediaURL+"sounds/applause.mp3",onSuccess, onError, onStatus));
 	
-exercises.push(new Media(""+mediaURL+"sounds/ex1.mp3"));
-exercises.push(new Media(""+mediaURL+"sounds/ex1.mp3"));
-exercises.push(new Media(""+mediaURL+"sounds/ex1.mp3"));
+exercises.push(new Media(""+mediaURL+"sounds/ex1.mp3",onSuccess, onError, onStatus));
+exercises.push(new Media(""+mediaURL+"sounds/ex1.mp3",onSuccess, onError, onStatus));
+exercises.push(new Media(""+mediaURL+"sounds/ex1.mp3",onSuccess, onError, onStatus));
 
 
-
+var theStatus=exercises[0].onStatus;
+alert(theStatus);
 //var my_media = new Media(""+mediaURL+"/sounds/ex1.mp3");
 //var infor=my_media.MediaStatus;
 //alert(infor);
