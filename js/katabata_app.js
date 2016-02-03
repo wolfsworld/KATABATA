@@ -15,7 +15,7 @@ exercises.push(new Media("sounds/ex1.mp3"));
 exercises.push(new Media("sounds/ex1.mp3"));
 exercises.push(new Media("sounds/ex1.mp3"));
 */
-var my_media=new Media("sounds/go.mp3");
+var my_media=new Media("/android_asset/www/go.mp3");
 my_media.play();
 
 
