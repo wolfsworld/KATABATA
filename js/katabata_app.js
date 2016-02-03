@@ -26,8 +26,13 @@ exercises.push(new Media(""+mediaURL+"sounds/ex1.mp3",onSuccess, onError, onStat
 exercises.push(new Media(""+mediaURL+"sounds/ex1.mp3",onSuccess, onError, onStatus));
 
 
-var theStatus=exercises[0].onStatus;
-alert(theStatus);
+function onStatus(status){
+if( status==Media.MEDIA_STOPPED ) {
+            alert('it stopped');
+        }
+}
+//var theStatus=exercises[0].onStatus;
+//alert(theStatus);
 //var my_media = new Media(""+mediaURL+"/sounds/ex1.mp3");
 //var infor=my_media.MediaStatus;
 //alert(infor);
