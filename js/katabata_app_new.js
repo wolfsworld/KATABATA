@@ -25,32 +25,13 @@ exercises.push(new Media(""+mediaURL+"sounds/ex1.mp3"));
 exercises.push(new Media(""+mediaURL+"sounds/ex1.mp3"));
 exercises.push(new Media(""+mediaURL+"sounds/ex1.mp3"));
 */
-alert(mediaURL);
-
-var my_media = new Media(""+mediaURL+"ex1.mp3");
-var infor=my_media.MediaStatus;
-alert(infor);
 
 
-
-var my_media = new Media(""+mediaURL+"sounds/ex1.mp3", NULL, MediaError);
+var my_media = new Media(""+mediaURL+"/sounds/ex1.mp3");
+//var infor=my_media.MediaStatus;
+//alert(infor);
 my_media.play();
 
-function playAudio(url) {
-    // Play the audio file at url
-    var my_media = new Media(url,
-        // success callback
-        function () {
-            console.log("playAudio():Audio Success");
-        },
-        // error callback
-        function (err) {
-            console.log("playAudio():Audio Error: " + err);
-        }
-    );
-    // Play audio
-    my_media.play();
-}
 
 /*sounds.push([sound1,new Media("sound/sound1.mp3")]);
 sounds.push([sound2,new Media("sound/sound1.mp3")]);
