@@ -34,7 +34,7 @@ function onError(error){
 	//alert('error');
 }
 
-function onStatus(status){
+/*function onStatus(status){
 if( status==Media.MEDIA_STOPPED ) {
             return m_stopped;
 			//alert('it stopped');
@@ -42,7 +42,7 @@ if( status==Media.MEDIA_STOPPED ) {
 		else{
 		//	alert('it did not stop');
 		}
-}
+}*/
 //var theStatus=exercises[0].onStatus;
 //alert(theStatus);
 //var my_media = new Media(""+mediaURL+"/sounds/ex1.mp3");
