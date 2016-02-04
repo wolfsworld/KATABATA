@@ -27,19 +27,20 @@ exercises.push(new Media(""+mediaURL+"sounds/ex1.mp3",onSuccess, onError, onStat
 
 
 function onSuccess(){
-	alert('success');
+	//alert('success');
 }
 
 function onError(error){
-	alert('error');
+	//alert('error');
 }
 
 function onStatus(status){
 if( status==Media.MEDIA_STOPPED ) {
-            alert('it stopped');
+            return m_stopped;
+			//alert('it stopped');
         }
 		else{
-			alert('it did not stop');
+		//	alert('it did not stop');
 		}
 }
 //var theStatus=exercises[0].onStatus;
@@ -47,7 +48,7 @@ if( status==Media.MEDIA_STOPPED ) {
 //var my_media = new Media(""+mediaURL+"/sounds/ex1.mp3");
 //var infor=my_media.MediaStatus;
 //alert(infor);
-exercises[0].play();
+//exercises[0].play();
 
 
 $(document).ready(function(){
@@ -103,9 +104,13 @@ function exercise(exc){
 running=true;
 $('#rd_counter').append('Round #1 of 8');
 sound_ex2[exc].play();
-if(sound_ex2[exc].MEDIA_STOPPED==4){
+
+function onStatus(status){
+if( status==Media.MEDIA_STOPPED ) {
+           go_ex('g');
+}
 //go to play GO
-go_ex('g');
+//go_ex('g');
 }
 }
 
