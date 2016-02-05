@@ -1,23 +1,22 @@
-document.addEventListener("deviceready", onDeviceReady, false);
-function onDeviceReady() {
-	
+$(document).ready(function(){
 var sounds = [];
 var exercises = [];
 
 
-/*sounds.push(new Media("sounds/go.mp3"));
-sounds.push(new Media("sounds/rest.mp3"));
-sounds.push(new Media("sounds/whip.mp3"));
-sounds.push(new Media("sounds/heartbeat.mp3"));
-sounds.push(new Media("sounds/applause.mp3"));
+sounds.push(new Audio("sounds/go.mp3"));
+sounds.push(new Audio("sounds/rest.mp3"));
+sounds.push(new Audio("sounds/whip.mp3"));
+sounds.push(new Audio("sounds/heartbeat.mp3"));
+sounds.push(new Audio("sounds/applause.mp3"));
 	
-exercises.push(new Media("sounds/ex1.mp3"));
-exercises.push(new Media("sounds/ex1.mp3"));
-exercises.push(new Media("sounds/ex1.mp3"));
-*/
-var my_media=new Media("/android_asset/www/sounds/go.mp3");
-my_media.play();
+exercises.push(new Audio("sounds/ex1.mp3"));
+exercises.push(new Audio("sounds/ex1.mp3"));
+exercises.push(new Audio("sounds/ex1.mp3"));
+//var my_media=new Media("/android_asset/www/sounds/go.mp3");
+//my_media.play();
 
+//var my_audio=new Audio("sounds/applause.mp3");
+//my_audio.play();
 
 //alert(sounds[0]);
 
@@ -35,11 +34,11 @@ exercises.push([med6,new Media("sound/voice001.mp3")]);
 exercises.push([med7,new Media("sound/voice001.mp3")]);*/
 
 
-$(document).ready(function(){
+
 var ct=0;
 var z=0;
-var sound_ex0=$('.ex0');
-var sound_ex2=$('.ex2');
+var sound_ex0=sounds;
+var sound_ex2=exercises;
 var tid;
 var running=false;
 //Select random exercise
@@ -89,7 +88,6 @@ running=true;
 $('#rd_counter').append('Round #1 of 8');
 sound_ex2[exc].play();
 sound_ex2[exc].onended = function(){
-
 //go to play GO
 go_ex('g');
 }
@@ -104,8 +102,8 @@ function go_ex(g){
 }
 
 function rest_ex(r){
-	sound_ex0[2].play();
-	sound_ex0[2].onended = function(){
+	sound_ex0[1].play();
+	sound_ex0[1].onended = function(){
 		//go to countdown
 		countdown1('r');
 	}
@@ -123,13 +121,13 @@ function countdown(v,z,d){
 	//alert(z);
 $('#container').css("display", "block");
 	  if(v=='g'){
-	  sound_ex0[1].play();
-	  sound_ex0[1].onended = function(){
+	  sound_ex0[2].play();
+	  sound_ex0[2].onended = function(){
 	  abort(z,d);
 	  }
 	  } else{
-		  sound_ex0[4].play();
-		  sound_ex0[4].onended = function(){
+		  sound_ex0[3].play();
+		  sound_ex0[3].onended = function(){
 		  abort(z,d);
 	  }
 }//function countdown
@@ -162,7 +160,7 @@ $('#displayer').empty();
 			  }
 			  else{ 
 				$('#container').css("display", "none");
-				sound_ex0[3].play();
+				sound_ex0[4].play();
 				alert('done!');
 				$('#rd_counter').empty();
 				$('#displayer').empty();
@@ -181,6 +179,6 @@ clearInterval(tid);
 }
 
 });//document ready
-}
+//}
 
 

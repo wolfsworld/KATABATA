@@ -1,36 +1,19 @@
-document.addEventListener("deviceready", onDeviceReady, false);
-function onDeviceReady() {
+//document.addEventListener("deviceready", onDeviceReady, false);
+//function onDeviceReady() {
 	
 var sounds = [];
 var exercises = [];
 
-function checkplatform(){
+/*function checkplatform(){
 if(device.platform.toLowerCase() === "android"){
 	return "/android_asset/www/";
 }
 else{
 	return '';
 }
-}
-
-var mediaURL=checkplatform();
-
-sounds.push(new Media(""+mediaURL+"sounds/go.mp3"));
-sounds.push(new Media(""+mediaURL+"sounds/rest.mp3"));
-sounds.push(new Media(""+mediaURL+"sounds/whip.mp3"));
-sounds.push(new Media(""+mediaURL+"sounds/heartbeat.mp3"));
-sounds.push(new Media(""+mediaURL+"sounds/applause.mp3"));
-	
-exercises.push(new Media(""+mediaURL+"sounds/ex1.mp3"));
-exercises.push(new Media(""+mediaURL+"sounds/ex1.mp3"));
-exercises.push(new Media(""+mediaURL+"sounds/ex1.mp3"));
+}*/
 
 
-
-//var my_media = new Media(""+mediaURL+"/sounds/ex1.mp3");
-//var infor=my_media.MediaStatus;
-//alert(infor);
-exercises[0].play();
 
 
 /*sounds.push([sound1,new Media("sound/sound1.mp3")]);
@@ -100,10 +83,10 @@ function exercise(exc){
 running=true;
 $('#rd_counter').append('Round #1 of 8');
 sound_ex2[exc].play();
-if(sound_ex2[exc].MEDIA_STOPPED==4){
+//if(sound_ex2[exc].MEDIA_STOPPED==4){
 //go to play GO
 go_ex('g');
-}
+//}
 }
 
 function go_ex(g){
@@ -192,6 +175,6 @@ clearInterval(tid);
 }
 
 });//document ready
-}
+//}
 
 
