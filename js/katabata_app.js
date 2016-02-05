@@ -104,13 +104,14 @@ function exercise(exc){
 running=true;
 $('#rd_counter').append('Round #1 of 8');
 sound_ex2[exc].play();
-}
-
 function next_step(){
 alert('we go next step');
 //go to play GO
 go_ex('g');
 }
+}
+
+
 
 function go_ex(g){
 	sound_ex0[0].play();//play GO
