@@ -34,16 +34,7 @@ function onError(error){
 	//alert('error');
 }
 
-function onStatus(status){
-if( status==Media.MEDIA_STOPPED ) {
-            alert('it stopped');
-			next_step();
-			
-        }
-		else{
-		//	alert('it did not stop');
-		}
-}
+
 //var theStatus=exercises[0].onStatus;
 //alert(theStatus);
 //var my_media = new Media(""+mediaURL+"/sounds/ex1.mp3");
@@ -106,11 +97,20 @@ running=true;
 $('#rd_counter').append('Round #1 of 8');
 sound_ex2[exc].play();
 
-function next_step(){
+function onStatus(status){
+if( status==Media.MEDIA_STOPPED ) {
+            //alert('it stopped');
+			go_ex('g');
+			
+        }
+		else{
+		//alert('it did not stop');
+		}
+}
 
 //go to play GO
-go_ex('g');
-}
+//go_ex('g');
+//}
 }
 
 function go_ex(g){
