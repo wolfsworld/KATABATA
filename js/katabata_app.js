@@ -36,11 +36,11 @@ function onError(error){
 
 function onStatus(status){
 if( status==Media.MEDIA_STOPPED ) {
-            //alert('it stopped');
+            alert('go to next step');
 			next_step();
         }
 		else{
-		//	alert('it did not stop');
+			alert('it did not stop');
 		}
 }
 //var theStatus=exercises[0].onStatus;
