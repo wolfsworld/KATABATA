@@ -37,7 +37,7 @@ function onStatus(status){
 		//}
 }
 
-alert('this is'+exercises[0].Media.statusCallback+'');
+alert('this is'+exercises[0].statusCallback+'');
 //var my_media=new Media("/android_asset/www/sounds/go.mp3");
 //my_media.play();
 
