@@ -7,15 +7,15 @@ var exercises = [];
 
 var resource="/android_asset/www/";
 
-sounds.push(new Audio(""+resource+"sounds/go.mp3"));
-sounds.push(new Audio(""+resource+"sounds/rest.mp3"));
-sounds.push(new Audio(""+resource+"sounds/whip.mp3"));
-sounds.push(new Audio(""+resource+"sounds/heartbeat.mp3"));
-sounds.push(new Audio(""+resource+"sounds/applause.mp3"));
+sounds.push(new Media(""+resource+"sounds/go.mp3"));
+sounds.push(new Media(""+resource+"sounds/rest.mp3"));
+sounds.push(new Media(""+resource+"sounds/whip.mp3"));
+sounds.push(new Media(""+resource+"sounds/heartbeat.mp3"));
+sounds.push(new Media(""+resource+"sounds/applause.mp3"));
 	
-exercises.push(new Audio(""+resource+"sounds/ex1.mp3"));
-exercises.push(new Audio(""+resource+"sounds/ex1.mp3"));
-exercises.push(new Audio(""+resource+"sounds/ex1.mp3"));
+exercises.push(new Media(""+resource+"sounds/ex1.mp3"));
+exercises.push(new Media(""+resource+"sounds/ex1.mp3"));
+exercises.push(new Media(""+resource+"sounds/ex1.mp3"));
 //var my_media=new Media("/android_asset/www/sounds/go.mp3");
 //my_media.play();
 
