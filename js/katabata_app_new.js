@@ -37,7 +37,7 @@ function onStatus(status){
 		//}
 }
 
-
+alert(Media.status);
 //var my_media=new Media("/android_asset/www/sounds/go.mp3");
 //my_media.play();
 
@@ -113,7 +113,7 @@ function exercise(exc){
 running=true;
 $('#rd_counter').append('Round #1 of 8');
 sound_ex2[exc].play();
-alert('this is'+sound_ex2[exc].Media.status+'');
+alert('this is'+sound_ex2[exc].status+'');
 //sound_ex2[exc].Media.MEDIA_STOPPED= function(){
 //alert('we go next to the step');
 //go to play GO
