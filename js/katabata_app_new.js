@@ -1,20 +1,48 @@
-//document.addEventListener("deviceready", onDeviceReady, false);
-//function onDeviceReady() {
-	
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+
+$(document).ready(function(){
 var sounds = [];
 var exercises = [];
 
-/*function checkplatform(){
-if(device.platform.toLowerCase() === "android"){
-	return "/android_asset/www/";
+var resource="/android_asset/www/";
+
+sounds.push(new Media(""+resource+"sounds/go.mp3",onSuccess, onError, onStatus));
+sounds.push(new Media(""+resource+"sounds/rest.mp3",onSuccess, onError, onStatus));
+sounds.push(new Media(""+resource+"sounds/whip.mp3",onSuccess, onError, onStatus));
+sounds.push(new Media(""+resource+"sounds/heartbeat.mp3",onSuccess, onError, onStatus));
+sounds.push(new Media(""+resource+"sounds/applause.mp3",onSuccess, onError, onStatus));
+	
+exercises.push(new Media(""+resource+"sounds/ex1.mp3",onSuccess, onError, onStatus));
+exercises.push(new Media(""+resource+"sounds/ex1.mp3",onSuccess, onError, onStatus));
+exercises.push(new Media(""+resource+"sounds/ex1.mp3",onSuccess, onError, onStatus));
+
+
+function onSuccess(){
+	//alert('success');
 }
-else{
-	return '';
+
+function onError(error){
+	//alert('error');
 }
-}*/
 
+function onStatus(status){
+if( status==Media.MEDIA_STOPPED ) {
+            //alert('go to next step');
+			next_step();
+        }
+		else{
+			//alert('it did not stop');
+		}
+}
 
+//var my_media=new Media("/android_asset/www/sounds/go.mp3");
+//my_media.play();
 
+//var my_audio=new Audio("sounds/applause.mp3");
+//my_audio.play();
+
+//alert(sounds[0]);
 
 /*sounds.push([sound1,new Media("sound/sound1.mp3")]);
 sounds.push([sound2,new Media("sound/sound1.mp3")]);
@@ -30,7 +58,7 @@ exercises.push([med6,new Media("sound/voice001.mp3")]);
 exercises.push([med7,new Media("sound/voice001.mp3")]);*/
 
 
-$(document).ready(function(){
+
 var ct=0;
 var z=0;
 var sound_ex0=sounds;
@@ -58,13 +86,13 @@ $('#displayer').empty();
 $('#container').css("display", "none");
 
 for(var i=0; i<sound_ex0.length; i++){
-
-sound_ex0[i].stop();
+sound_ex0[i].pause();
+sound_ex0[i].currentTime=0;
 }
 
 for(var i=0; i<sound_ex2.length; i++){
-
-sound_ex2[i].stop();
+sound_ex2[i].pause();
+sound_ex2[i].currentTime=0;
 }
 
 var exc=pick;
@@ -83,15 +111,16 @@ function exercise(exc){
 running=true;
 $('#rd_counter').append('Round #1 of 8');
 sound_ex2[exc].play();
-//if(sound_ex2[exc].MEDIA_STOPPED==4){
+function next_step(){
+alert('we go next to the step');
 //go to play GO
 go_ex('g');
-//}
+}
 }
 
 function go_ex(g){
 	sound_ex0[0].play();//play GO
-	if(sound_ex0[exc].MEDIA_STOPPED==4){
+	sound_ex0[0].onended = function(){
 		//go to countdown
 		countdown1('g');
 	}
@@ -99,7 +128,7 @@ function go_ex(g){
 
 function rest_ex(r){
 	sound_ex0[1].play();
-	if(sound_ex2[exc].MEDIA_STOPPED==4){
+	sound_ex0[1].onended = function(){
 		//go to countdown
 		countdown1('r');
 	}
@@ -118,12 +147,12 @@ function countdown(v,z,d){
 $('#container').css("display", "block");
 	  if(v=='g'){
 	  sound_ex0[2].play();
-	  if(sound_ex0[2].MEDIA_STOPPED==4){
+	  sound_ex0[2].onended = function(){
 	  abort(z,d);
 	  }
 	  } else{
-	  sound_ex0[3].play();
-	  if(sound_ex0[3].MEDIA_STOPPED==4){
+		  sound_ex0[3].play();
+		  sound_ex0[3].onended = function(){
 		  abort(z,d);
 	  }
 }//function countdown
@@ -175,6 +204,6 @@ clearInterval(tid);
 }
 
 });//document ready
-//}
+}
 
 
