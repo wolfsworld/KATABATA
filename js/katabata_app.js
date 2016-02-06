@@ -1,57 +1,29 @@
-document.addEventListener("deviceready", onDeviceReady, false);
-function onDeviceReady() {
-	
+//document.addEventListener("deviceready", onDeviceReady, false);
+//function onDeviceReady() {
+
+$(document).ready(function(){
+
 var sounds = [];
 var exercises = [];
 
-function checkplatform(){
-if(device.platform.toLowerCase() === "android"){
-	return "/android_asset/www/";
-}
-else{
-	return '';
-}
-}
 
-var mediaURL=checkplatform();
 
-sounds.push(new Media(""+mediaURL+"sounds/go.mp3",onSuccess, onError, onStatus));
-sounds.push(new Media(""+mediaURL+"sounds/rest.mp3",onSuccess, onError, onStatus));
-sounds.push(new Media(""+mediaURL+"sounds/whip.mp3",onSuccess, onError, onStatus));
-sounds.push(new Media(""+mediaURL+"sounds/heartbeat.mp3",onSuccess, onError, onStatus));
-sounds.push(new Media(""+mediaURL+"sounds/applause.mp3",onSuccess, onError, onStatus));
+
+//var resource="/android_asset/www/";
+//var resource;
+
+sounds.push(new Audio("sounds/go.mp3"));
+sounds.push(new Audio("sounds/rest.mp3"));
+sounds.push(new Audio("sounds/whip.mp3"));
+sounds.push(new Audio("sounds/heartbeat.mp3"));
+sounds.push(new Audio("sounds/applause.mp3"));
 	
-exercises.push(new Media(""+mediaURL+"sounds/ex1.mp3",onSuccess, onError, onStatus));
-exercises.push(new Media(""+mediaURL+"sounds/ex1.mp3",onSuccess, onError, onStatus));
-exercises.push(new Media(""+mediaURL+"sounds/ex1.mp3",onSuccess, onError, onStatus));
+exercises.push(new Audio("sounds/ex1.mp3"));
+exercises.push(new Audio("sounds/ex1.mp3"));
+exercises.push(new Audio("sounds/ex1.mp3"));
 
 
-function onSuccess(){
-	//alert('success');
-}
 
-function onError(error){
-	//alert('error');
-}
-
-function onStatus(status){
-if( status==Media.MEDIA_STOPPED ) {
-            alert('go to next step');
-			next_step();
-        }
-		else{
-			alert('it did not stop');
-		}
-}
-//var theStatus=exercises[0].onStatus;
-//alert(theStatus);
-//var my_media = new Media(""+mediaURL+"/sounds/ex1.mp3");
-//var infor=my_media.MediaStatus;
-//alert(infor);
-//exercises[0].play();
-
-
-$(document).ready(function(){
 var ct=0;
 var z=0;
 var sound_ex0=sounds;
@@ -79,13 +51,13 @@ $('#displayer').empty();
 $('#container').css("display", "none");
 
 for(var i=0; i<sound_ex0.length; i++){
-
-sound_ex0[i].stop();
+sound_ex0[i].pause();
+sound_ex0[i].currentTime=0;
 }
 
 for(var i=0; i<sound_ex2.length; i++){
-
-sound_ex2[i].stop();
+sound_ex2[i].pause();
+sound_ex2[i].currentTime=0;
 }
 
 var exc=pick;
@@ -104,18 +76,15 @@ function exercise(exc){
 running=true;
 $('#rd_counter').append('Round #1 of 8');
 sound_ex2[exc].play();
-function next_step(){
-alert('we go next step');
+//sound_ex2[exc].onended = function(){
 //go to play GO
-go_ex('g');
+//go_ex('g');
+//}
 }
-}
-
-
 
 function go_ex(g){
 	sound_ex0[0].play();//play GO
-	if(sound_ex0[exc].MEDIA_STOPPED==4){
+	sound_ex0[0].onended = function(){
 		//go to countdown
 		countdown1('g');
 	}
@@ -123,7 +92,7 @@ function go_ex(g){
 
 function rest_ex(r){
 	sound_ex0[1].play();
-	if(sound_ex2[exc].MEDIA_STOPPED==4){
+	sound_ex0[1].onended = function(){
 		//go to countdown
 		countdown1('r');
 	}
@@ -142,12 +111,12 @@ function countdown(v,z,d){
 $('#container').css("display", "block");
 	  if(v=='g'){
 	  sound_ex0[2].play();
-	  if(sound_ex0[2].MEDIA_STOPPED==4){
+	  sound_ex0[2].onended = function(){
 	  abort(z,d);
 	  }
 	  } else{
-	  sound_ex0[3].play();
-	  if(sound_ex0[3].MEDIA_STOPPED==4){
+		  sound_ex0[3].play();
+		  sound_ex0[3].onended = function(){
 		  abort(z,d);
 	  }
 }//function countdown
@@ -199,6 +168,6 @@ clearInterval(tid);
 }
 
 });//document ready
-}
+//}
 
 

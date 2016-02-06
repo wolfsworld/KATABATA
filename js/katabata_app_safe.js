@@ -1,41 +1,26 @@
-document.addEventListener("deviceready", onDeviceReady, false);
-function onDeviceReady() {
+//document.addEventListener("deviceready", onDeviceReady, false);
+//function onDeviceReady() {
 
 $(document).ready(function(){
+
 var sounds = [];
 var exercises = [];
 
-var resource="/android_asset/www/";
 
-sounds.push(new Media(""+resource+"sounds/go.mp3"));
-sounds.push(new Media(""+resource+"sounds/rest.mp3"));
-sounds.push(new Media(""+resource+"sounds/whip.mp3"));
-sounds.push(new Media(""+resource+"sounds/heartbeat.mp3"));
-sounds.push(new Media(""+resource+"sounds/applause.mp3"));
+
+
+//var resource="/android_asset/www/";
+//var resource;
+
+sounds.push(new Audio("sounds/go.mp3"));
+sounds.push(new Audio("sounds/rest.mp3"));
+sounds.push(new Audio("sounds/whip.mp3"));
+sounds.push(new Audio("sounds/heartbeat.mp3"));
+sounds.push(new Audio("sounds/applause.mp3"));
 	
-exercises.push(new Media(""+resource+"sounds/ex1.mp3"));
-exercises.push(new Media(""+resource+"sounds/ex1.mp3"));
-exercises.push(new Media(""+resource+"sounds/ex1.mp3"));
-//var my_media=new Media("/android_asset/www/sounds/go.mp3");
-//my_media.play();
-
-//var my_audio=new Audio("sounds/applause.mp3");
-//my_audio.play();
-
-//alert(sounds[0]);
-
-/*sounds.push([sound1,new Media("sound/sound1.mp3")]);
-sounds.push([sound2,new Media("sound/sound1.mp3")]);
-sounds.push([sound3,new Media("sound/sound1.mp3")]);
-sounds.push([sound4,new Media("sound/sound1.mp3")]);
-	
-exercises.push([med1,new Media("sound/voice001.mp3")]);
-exercises.push([med2,new Media("sound/voice001.mp3")]);
-exercises.push([med3,new Media("sound/voice001.mp3")]);
-exercises.push([med4,new Media("sound/voice001.mp3")]);
-exercises.push([med5,new Media("sound/voice001.mp3")]);
-exercises.push([med6,new Media("sound/voice001.mp3")]);
-exercises.push([med7,new Media("sound/voice001.mp3")]);*/
+exercises.push(new Audio("sounds/ex1.mp3"));
+exercises.push(new Audio("sounds/ex1.mp3"));
+exercises.push(new Audio("sounds/ex1.mp3"));
 
 
 
@@ -183,6 +168,6 @@ clearInterval(tid);
 }
 
 });//document ready
-}
+//}
 
 
