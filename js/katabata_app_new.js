@@ -14,8 +14,8 @@ sounds.push(new Media(""+resource+"sounds/heartbeat.mp3",onSuccess, onError, onS
 sounds.push(new Media(""+resource+"sounds/applause.mp3",onSuccess, onError, onStatus));
 	
 exercises.push(new Media(""+resource+"sounds/ex1.mp3",onSuccess, onError, onStatus));
-exercises.push(new Media(""+resource+"sounds/ex1.mp3",onSuccess, onError, onStatus));
-exercises.push(new Media(""+resource+"sounds/ex1.mp3",onSuccess, onError, onStatus));
+//exercises.push(new Media(""+resource+"sounds/ex1.mp3",onSuccess, onError, onStatus));
+//exercises.push(new Media(""+resource+"sounds/ex1.mp3",onSuccess, onError, onStatus));
 
 
 function onSuccess(){
@@ -37,7 +37,7 @@ function onStatus(status){
 		//}
 }
 
-alert(Media.status);
+alert(exercises[0].Media.status);
 //var my_media=new Media("/android_asset/www/sounds/go.mp3");
 //my_media.play();
 
