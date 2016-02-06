@@ -27,17 +27,17 @@ function onError(error){
 }
 
 function onStatus(status){
-	alert(status);
-//if( status==Media.MEDIA_STOPPED ) {
-            //alert('go to next step');
-			//next_step();
-       // }
+	//alert(status);
+if( status==4) {
+            alert('go to next step');
+		return status;	//next_step();
+        }
 		//else{
 			//alert('it did not stop');
 		//}
 }
 
-alert('this is'+exercises[0].status+'');
+
 //var my_media=new Media("/android_asset/www/sounds/go.mp3");
 //my_media.play();
 
@@ -113,10 +113,12 @@ function exercise(exc){
 running=true;
 $('#rd_counter').append('Round #1 of 8');
 sound_ex2[exc].play();
-alert('this is'+sound_ex2[exc].status+'');
-//sound_ex2[exc].Media.MEDIA_STOPPED= function(){
-//alert('we go next to the step');
-//go to play GO
+if (sound_ex2[exc].onStatus==4){//sound_ex2[exc].Media.MEDIA_STOPPED= function(){
+alert('we go next to the step');
+}
+else{
+	alert('status is something else')
+}//go to play GO
 //go_ex('g');
 //}
 }
