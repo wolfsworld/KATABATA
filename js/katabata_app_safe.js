@@ -1,3 +1,6 @@
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+
 $(document).ready(function(){
 var sounds = [];
 var exercises = [];
@@ -180,6 +183,6 @@ clearInterval(tid);
 }
 
 });//document ready
-//}
+}
 
 
