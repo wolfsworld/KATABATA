@@ -117,7 +117,7 @@ if (sound_ex2[exc].onStatus==4){//sound_ex2[exc].Media.MEDIA_STOPPED= function()
 alert('we go next to the step');
 }
 else{
-	alert('status is something else')
+	alert('status is '+sound_ex2[exc].onStatus+'');
 }//go to play GO
 //go_ex('g');
 //}
