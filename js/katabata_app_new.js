@@ -116,7 +116,7 @@ running=true;
 $('#rd_counter').append('Round #1 of 8');
 var ex_sound=sound_ex2[exc];
 alert(ex_sound);
-ex_sound=new Media(ex_sound,onSuccess, onError, onStatus);
+ex_sound=new Media(""+ex_sound+"",onSuccess, onError, onStatus);
 ex_sound.play();
 function onStatus(status){
 if( status==4)
