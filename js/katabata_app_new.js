@@ -119,8 +119,9 @@ alert(ex_sound);
 ex_sound=new Media(""+ex_sound+"",onSuccess, onError, onStatus);
 ex_sound.play();
 function onStatus(status){
-if( status==4)
+if( status==4){
 go_ex('g');
+}
 }
 }
 
@@ -128,9 +129,10 @@ function go_ex(g){
 	sound_ex0[0]=new Media(sound_ex0[0],onSuccess, onError, onStatus);
 	sound_ex0[0].play();//play GO
 	function onStatus(status){
-	if( status==4)
+	if( status==4){
 		//go to countdown
 		countdown1('g');
+	}
 	}
 }
 
@@ -138,9 +140,9 @@ function rest_ex(r){
 	sound_ex0[1]=new Media(sound_ex0[1],onSuccess, onError, onStatus);
 	sound_ex0[1].play();
 	function onStatus(status){
-	if( status==4)
+	if( status==4){
 		countdown1('r');
-	}
+	}}
 }
 
 function countdown1(v){
@@ -158,16 +160,16 @@ $('#container').css("display", "block");
 	  sound_ex0[2]=new Media(sound_ex0[2],onSuccess, onError, onStatus);
 	  sound_ex0[2].play();
 	 	function onStatus(status){
-		if( status==4)
+		if( status==4){
 	  abort(z,d);
-	  }
+	  }}
 	  } else{
 		  sound_ex0[3]=new Media(sound_ex0[3],onSuccess, onError, onStatus);
 		  sound_ex0[3].play();
 		function onStatus(status){
-		if( status==4)
+		if( status==4){
 		  abort(z,d);
-	  }
+	  }}
 }//function countdown
 				  
 function abort(z,d){
