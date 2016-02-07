@@ -1,6 +1,18 @@
 document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
 
+function checkplatform(){
+if(device.platform.toLowerCase() === "android"){
+	return "/android_asset/www/";
+}
+else{
+	return '';
+}
+}
+
+var mediaURL=checkplatform();
+
+
 $(document).ready(function(){
 var sounds = [];
 var exercises = [];
@@ -13,13 +25,13 @@ var resource="/android_asset/www/";
 //sounds.push(new Media(""+resource+"sounds/heartbeat.mp3",onSuccess, onError, onStatus));
 //sounds.push(new Media(""+resource+"sounds/applause.mp3",onSuccess, onError, onStatus));
 
-sounds.push(""+resource+"sounds/go.mp3");
-sounds.push(""+resource+"sounds/rest.mp3");
-sounds.push(""+resource+"sounds/whip.mp3");
-sounds.push(""+resource+"sounds/heartbeat.mp3");
-sounds.push(""+resource+"sounds/applause.mp3");
+sounds.push(""+mediaURL+"sounds/go.mp3");
+sounds.push(""+mediaURL+"sounds/rest.mp3");
+sounds.push(""+mediaURL+"sounds/whip.mp3");
+sounds.push(""+mediaURL+"sounds/heartbeat.mp3");
+sounds.push(""+mediaURL+"sounds/applause.mp3");
 
-exercises.push(""+resource+"sounds/ex1.mp3");
+exercises.push(""+mediaURL+"sounds/ex1.mp3");
 //exercises.push(new Media(""+resource+"sounds/ex1.mp3",onSuccess, onError, onStatus));
 //exercises.push(new Media(""+resource+"sounds/ex1.mp3",onSuccess, onError, onStatus));
 //exercises.push(new Media(""+resource+"sounds/ex1.mp3",onSuccess, onError, onStatus));
@@ -102,8 +114,10 @@ exercise(exc);
 function exercise(exc){
 running=true;
 $('#rd_counter').append('Round #1 of 8');
-sound_ex2[exc]=new Media(sound_ex2[exc],onSuccess, onError, onStatus);
-sound_ex2[exc].play();
+var ex_sound=sound_ex2[exc];
+alert(ex_sound);
+ex_sound=new Media(ex_sound,onSuccess, onError, onStatus);
+ex_sound.play();
 function onStatus(status){
 if( status==4)
 go_ex('g');
