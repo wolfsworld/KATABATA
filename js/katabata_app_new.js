@@ -19,11 +19,11 @@ var exercises = [];
 
 var resource="/android_asset/www/";
 
-sounds.push(new Media(""+mediaURL+"sounds/go.mp3",onSuccess, onError, onStatus));
-sounds.push(new Media(""+mediaURL+"sounds/rest.mp3",onSuccess, onError, onStatus));
-sounds.push(new Media(""+mediaURL+"sounds/whip.mp3",onSuccess, onError, onStatus));
-sounds.push(new Media(""+mediaURL+"sounds/heartbeat.mp3",onSuccess, onError, onStatus));
-sounds.push(new Media(""+mediaURL+"sounds/applause.mp3",onSuccess, onError, onStatus));
+sounds.push(new Media(""+mediaURL+"sounds/go.mp3"));
+sounds.push(new Media(""+mediaURL+"sounds/rest.mp3"));
+sounds.push(new Media(""+mediaURL+"sounds/whip.mp3"));
+sounds.push(new Media(""+mediaURL+"sounds/heartbeat.mp3"));
+sounds.push(new Media(""+mediaURL+"sounds/applause.mp3"));
 
 //sounds.push(""+mediaURL+"sounds/go.mp3");
 //sounds.push(""+mediaURL+"sounds/rest.mp3");
@@ -48,7 +48,7 @@ function onError(error){
 
 function onStatus(status){
 if( status==Media.MEDIA_STOPPED ) {
-            alert('has stopped');
+            //alert('has stopped');
 			movetogo();
         }
 		else{
