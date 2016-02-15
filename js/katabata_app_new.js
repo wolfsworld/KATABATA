@@ -47,7 +47,7 @@ function onError(error){
 
 function onStatus(status){
 if( status==Media.MEDIA_STOPPED ) {
-            alert('go to next step');
+            //alert('go to next step');
 			next_step();
         }
 		else{
