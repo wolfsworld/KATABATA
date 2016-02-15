@@ -47,7 +47,7 @@ function onError(error){
 
 function onStatus(status){
 if( status==Media.MEDIA_STOPPED ) {
-            //alert('go to next step');
+            alert('has stopped');
 			movetogo();
         }
 		else{
@@ -119,7 +119,8 @@ ex_sound.play();
 }
 
 function movetogo(){
-	go_ex('g');
+	//go_ex('g');
+	alert('movetogo');
 }
 
 function go_ex(g){
