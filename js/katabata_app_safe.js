@@ -1,5 +1,5 @@
-//document.addEventListener("deviceready", onDeviceReady, false);
-//function onDeviceReady() {
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
 
 $(document).ready(function(){
 
@@ -168,6 +168,6 @@ clearInterval(tid);
 }
 
 });//document ready
-//}
+}
 
 
