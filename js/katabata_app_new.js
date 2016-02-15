@@ -54,9 +54,13 @@ prep_tabata();
 $('#stop_btn').on('click', function (){
 for(var i=0; i<sound_ex0.length; i++){
 sound_ex0[i].stop();
+abortTimer();
+sound_ex0[i].release();
 }
 for(var i=0; i<sound_ex2.length; i++){
 sound_ex2[i].stop();
+abortTimer();
+sound_ex2[i].release()
 }
 });
 
