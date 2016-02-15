@@ -13,8 +13,7 @@ else{
 var mediaURL=checkplatform();
 
 $(document).ready(function(){
-			   
-$('#container').css("display", "block");
+
 var sounds = [];
 var exercises = [];
 

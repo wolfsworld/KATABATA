@@ -69,12 +69,12 @@ navigator.splashscreen.hide();
 }
 
 #container {
-	display: none;
+	>display: none;
 	position: relative;
 	background-color: #FF0;
 	margin-top: 80px;
 	margin-left: 48%;
-	margin right: 52%;
+	margin-right: 52%;
 }
 
 .pulse {
@@ -165,7 +165,6 @@ navigator.splashscreen.hide();
 	text-align: center;
 	border:none;
 	background-color: fcf176;
-	>background-image: url(../img/app_header_bg.jpg);
 	background-repeat: repeat-x;
 	font-family: "Droid Sans", Arial, Helvetica, sans-serif;
 	font-size: 80%;
@@ -191,11 +190,9 @@ navigator.splashscreen.hide();
 <body>
 <div data-role="page" data-theme="a" id="main">
 
-	<div data-role="ui-content" data-theme="a">
-    <a href="#" id="ex2_btn" class="ui-btn ui-icon-eye ui-btn-icon-left ui-btn-icon-right ui-icon-carat-r">Do the KA-TABATA!</a>
-    
-    <br />
+<div data-role="ui-content" data-theme="a">
 
+<a href="#" id="ex2_btn" class="ui-btn ui-icon-eye ui-btn-icon-left ui-btn-icon-right ui-icon-carat-r">Do the KA-TABATA!</a>
 
 <div id="display">
 
@@ -216,6 +213,7 @@ navigator.splashscreen.hide();
       <p><input name="stop_btn" id="stop_btn" type="button" value="End Current Session"></p>
       <p>&copy; Wolf</p>
     </div>
+
 </div>
 </body>
 </html>
