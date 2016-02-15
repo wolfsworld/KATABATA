@@ -12,7 +12,6 @@ else{
 
 var mediaURL=checkplatform();
 
-
 $(document).ready(function(){
 var sounds = [];
 var exercises = [];
@@ -25,38 +24,16 @@ sounds.push(new Media(""+mediaURL+"sounds/whip.mp3"));
 sounds.push(new Media(""+mediaURL+"sounds/heartbeat.mp3"));
 sounds.push(new Media(""+mediaURL+"sounds/applause.mp3"));
 
-//sounds.push(""+mediaURL+"sounds/go.mp3");
-//sounds.push(""+mediaURL+"sounds/rest.mp3");
-//sounds.push(""+mediaURL+"sounds/whip.mp3");
-//sounds.push(""+mediaURL+"sounds/heartbeat.mp3");
-//sounds.push(""+mediaURL+"sounds/applause.mp3");
+exercises.push(new Media(""+mediaURL+"sounds/ex1.mp3",onSuccess, onError, onStatus));
 
-//exercises.push(""+mediaURL+"sounds/ex1.mp3");
-var exise1=new Media(""+mediaURL+"sounds/ex1.mp3",onSuccess, onError, onStatus);
-exercises.push(exise1);
-//exercises.push(new Media(""+resource+"sounds/ex1.mp3",onSuccess, onError, onStatus));
-//exercises.push(new Media(""+resource+"sounds/ex1.mp3",onSuccess, onError, onStatus));
+function onSuccess(){}
 
-
-function onSuccess(){
-	//alert('success');
-}
-
-function onError(error){
-	//alert('error');
-}
+function onError(error){}
 
 function onStatus(status){
 if( status==Media.MEDIA_STOPPED ) {
-            //alert('has stopped');
 			movetogo();
-        }
-		else{
-			//alert('it did not stop');
-		}
-}
-
-
+        }else{}}
 
 
 var ct=0;
@@ -74,6 +51,17 @@ $('#ex2_btn').on('click', function (){
 prep_tabata();
 });
 
+$('#stop_btn').on('click', function (){
+for(var i=0; i<sound_ex0.length; i++){
+sound_ex0[i].stop();
+}
+for(var i=0; i<sound_ex2.length; i++){
+sound_ex2[i].stop();
+}
+});
+
+
+
 function prep_tabata(){
 
 if(running==true){
@@ -84,16 +72,6 @@ abortTimer();
 $('#rd_counter').empty();
 $('#displayer').empty();
 $('#container').css("display", "none");
-
-for(var i=0; i<sound_ex0.length; i++){
-//sound_ex0[i].pause();
-//sound_ex0[i].currentTime=0;
-}
-
-for(var i=0; i<sound_ex2.length; i++){
-//sound_ex2[i].pause();
-//sound_ex2[i].currentTime=0;
-}
 
 var exc=pick;
 exercise(exc);
@@ -112,36 +90,20 @@ running=true;
 $('#rd_counter').append('Round #1 of 8');
 var ex_sound=sound_ex2[exc];
 ex_sound.play();
-//function onStatus(status){
-//if( status==4){
-//go_ex('g');
-//}
-//}
 }
 
 function movetogo(){
 	go_ex('g');
-	//alert('movetogo');
 }
 
 function go_ex(g){
-	//sound_ex0[0]=new Media(sound_ex0[0],onSuccess, onError, onStatus);
 	sound_ex0[0].play();//play GO
-	//function onStatus(status){
-	//if( status==4){
-		//go to countdown
 		countdown1('g');
-	//}
-	//}
 }
 
 function rest_ex(r){
-	//sound_ex0[1]=new Media(sound_ex0[1],onSuccess, onError, onStatus);
 	sound_ex0[1].play();
-	//function onStatus(status){
-	//if( status==4){
 		countdown1('r');
-	//}//}
 }
 
 function countdown1(v){
@@ -156,19 +118,11 @@ function countdown(v,z,d){
 	//alert(z);
 $('#container').css("display", "block");
 	  if(v=='g'){
-	  //sound_ex0[2]=new Media(sound_ex0[2],onSuccess, onError, onStatus);
 	  sound_ex0[2].play();
-	 	//function onStatus(status){
-		//if( status==4){
 	  abort(z,d);
-	  //}}
 	  } else{
-		 // sound_ex0[3]=new Media(sound_ex0[3],onSuccess, onError, onStatus);
 		  sound_ex0[3].play();
-		//function onStatus(status){
-		//if( status==4){
 		  abort(z,d);
-	  //}}
 }//function countdown
 				  
 function abort(z,d){
@@ -200,7 +154,6 @@ $('#displayer').empty();
 			  else{ 
 				$('#container').css("display", "none");
 				sound_ex0[4].play();
-				alert('done!');
 				$('#rd_counter').empty();
 				$('#displayer').empty();
 				$('#container').css("display", "none");
