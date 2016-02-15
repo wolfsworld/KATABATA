@@ -78,7 +78,7 @@ abortTimer();
 
 $('#rd_counter').empty();
 $('#displayer').empty();
-$('#container').css("display", "none");
+$('#pulse').css("display", "none");
 
 var exc=pick;
 exercise(exc);
@@ -123,7 +123,7 @@ function countdown1(v){
 function countdown(v,z,d){
 	//alert('this is v'+v+' this is z'+z+' this is d'+d+'');
 	//alert(z);
-$('#container').css("display", "block");
+$('#pulse').css("display", "block");
 $('#pulse').toggle( "slow" );
 	  if(v=='g'){
 	  sound_ex0[2].play();
@@ -144,7 +144,7 @@ $('#displayer').empty();
 		}
 		
 		if(z>=d){
-		  $('#container').css("display", "none");
+		  $('#pulse').css("display", "none");
 		  abortTimer();
 		  $('#displayer').empty();
 		  ct=ct+1;
@@ -160,11 +160,11 @@ $('#displayer').empty();
 				  }
 			  }
 			  else{ 
-				$('#container').css("display", "none");
+				$('#pulse').css("display", "none");
 				sound_ex0[4].play();
 				$('#rd_counter').empty();
 				$('#displayer').empty();
-				$('#container').css("display", "none");
+				$('#pulse').css("display", "none");
 				ct=0;
 				z=0;
 				running=false;
