@@ -32,7 +32,8 @@ sounds.push(new Media(""+mediaURL+"sounds/applause.mp3",onSuccess, onError, onSt
 //sounds.push(""+mediaURL+"sounds/applause.mp3");
 
 //exercises.push(""+mediaURL+"sounds/ex1.mp3");
-exercises.push(new Media(""+mediaURL+"sounds/ex1.mp3",onSuccess, onError, onStatus));
+var exise1=new Media(""+mediaURL+"sounds/ex1.mp3",onSuccess, onError, onStatus);
+exercises.push(exise1);
 //exercises.push(new Media(""+resource+"sounds/ex1.mp3",onSuccess, onError, onStatus));
 //exercises.push(new Media(""+resource+"sounds/ex1.mp3",onSuccess, onError, onStatus));
 
@@ -46,8 +47,8 @@ function onError(error){
 }
 
 function onStatus(status){
-if( status==exercises[0].Media.MEDIA_STOPPED ) {
-            //alert('has stopped');
+if( status==exise1.MEDIA_STOPPED ) {
+            alert('has stopped');
 			movetogo();
         }
 		else{
