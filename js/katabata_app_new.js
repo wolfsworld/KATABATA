@@ -19,47 +19,42 @@ var exercises = [];
 
 var resource="/android_asset/www/";
 
-//sounds.push(new Media(""+resource+"sounds/go.mp3",onSuccess, onError, onStatus));
-//sounds.push(new Media(""+resource+"sounds/rest.mp3",onSuccess, onError, onStatus));
-//sounds.push(new Media(""+resource+"sounds/whip.mp3",onSuccess, onError, onStatus));
-//sounds.push(new Media(""+resource+"sounds/heartbeat.mp3",onSuccess, onError, onStatus));
-//sounds.push(new Media(""+resource+"sounds/applause.mp3",onSuccess, onError, onStatus));
+sounds.push(new Media(""+mediaURL+"sounds/go.mp3",onSuccess, onError, onStatus));
+sounds.push(new Media(""+mediaURL+"sounds/rest.mp3",onSuccess, onError, onStatus));
+sounds.push(new Media(""+mediaURL+"sounds/whip.mp3",onSuccess, onError, onStatus));
+sounds.push(new Media(""+mediaURL+"sounds/heartbeat.mp3",onSuccess, onError, onStatus));
+sounds.push(new Media(""+mediaURL+"sounds/applause.mp3",onSuccess, onError, onStatus));
 
-sounds.push(""+mediaURL+"sounds/go.mp3");
-sounds.push(""+mediaURL+"sounds/rest.mp3");
-sounds.push(""+mediaURL+"sounds/whip.mp3");
-sounds.push(""+mediaURL+"sounds/heartbeat.mp3");
-sounds.push(""+mediaURL+"sounds/applause.mp3");
+//sounds.push(""+mediaURL+"sounds/go.mp3");
+//sounds.push(""+mediaURL+"sounds/rest.mp3");
+//sounds.push(""+mediaURL+"sounds/whip.mp3");
+//sounds.push(""+mediaURL+"sounds/heartbeat.mp3");
+//sounds.push(""+mediaURL+"sounds/applause.mp3");
 
-exercises.push(""+mediaURL+"sounds/ex1.mp3");
+//exercises.push(""+mediaURL+"sounds/ex1.mp3");
+exercises.push(new Media(""+mediaURL+"sounds/ex1.mp3",onSuccess, onError, onStatus));
 //exercises.push(new Media(""+resource+"sounds/ex1.mp3",onSuccess, onError, onStatus));
 //exercises.push(new Media(""+resource+"sounds/ex1.mp3",onSuccess, onError, onStatus));
-//exercises.push(new Media(""+resource+"sounds/ex1.mp3",onSuccess, onError, onStatus));
 
 
+function onSuccess(){
+	//alert('success');
+}
 
+function onError(error){
+	//alert('error');
+}
 
+function onStatus(status){
+if( status==Media.MEDIA_STOPPED ) {
+            alert('go to next step');
+			next_step();
+        }
+		else{
+			//alert('it did not stop');
+		}
+}
 
-//var my_media=new Media("/android_asset/www/sounds/go.mp3");
-//my_media.play();
-
-//var my_audio=new Audio("sounds/applause.mp3");
-//my_audio.play();
-
-//alert(sounds[0]);
-
-/*sounds.push([sound1,new Media("sound/sound1.mp3")]);
-sounds.push([sound2,new Media("sound/sound1.mp3")]);
-sounds.push([sound3,new Media("sound/sound1.mp3")]);
-sounds.push([sound4,new Media("sound/sound1.mp3")]);
-	
-exercises.push([med1,new Media("sound/voice001.mp3")]);
-exercises.push([med2,new Media("sound/voice001.mp3")]);
-exercises.push([med3,new Media("sound/voice001.mp3")]);
-exercises.push([med4,new Media("sound/voice001.mp3")]);
-exercises.push([med5,new Media("sound/voice001.mp3")]);
-exercises.push([med6,new Media("sound/voice001.mp3")]);
-exercises.push([med7,new Media("sound/voice001.mp3")]);*/
 
 
 
@@ -90,13 +85,13 @@ $('#displayer').empty();
 $('#container').css("display", "none");
 
 for(var i=0; i<sound_ex0.length; i++){
-sound_ex0[i].pause();
-sound_ex0[i].currentTime=0;
+//sound_ex0[i].pause();
+//sound_ex0[i].currentTime=0;
 }
 
 for(var i=0; i<sound_ex2.length; i++){
-sound_ex2[i].pause();
-sound_ex2[i].currentTime=0;
+//sound_ex2[i].pause();
+//sound_ex2[i].currentTime=0;
 }
 
 var exc=pick;
@@ -115,34 +110,32 @@ function exercise(exc){
 running=true;
 $('#rd_counter').append('Round #1 of 8');
 var ex_sound=sound_ex2[exc];
-alert(ex_sound);
-ex_sound=new Media(ex_sound,onSuccess, onError, onStatus);
 ex_sound.play();
-function onStatus(status){
-if( status==4){
+//function onStatus(status){
+//if( status==4){
 go_ex('g');
-}
-}
+//}
+//}
 }
 
 function go_ex(g){
-	sound_ex0[0]=new Media(sound_ex0[0],onSuccess, onError, onStatus);
+	//sound_ex0[0]=new Media(sound_ex0[0],onSuccess, onError, onStatus);
 	sound_ex0[0].play();//play GO
-	function onStatus(status){
-	if( status==4){
+	//function onStatus(status){
+	//if( status==4){
 		//go to countdown
 		countdown1('g');
-	}
-	}
+	//}
+	//}
 }
 
 function rest_ex(r){
-	sound_ex0[1]=new Media(sound_ex0[1],onSuccess, onError, onStatus);
+	//sound_ex0[1]=new Media(sound_ex0[1],onSuccess, onError, onStatus);
 	sound_ex0[1].play();
-	function onStatus(status){
-	if( status==4){
+	//function onStatus(status){
+	//if( status==4){
 		countdown1('r');
-	}}
+	//}//}
 }
 
 function countdown1(v){
@@ -157,19 +150,19 @@ function countdown(v,z,d){
 	//alert(z);
 $('#container').css("display", "block");
 	  if(v=='g'){
-	  sound_ex0[2]=new Media(sound_ex0[2],onSuccess, onError, onStatus);
+	  //sound_ex0[2]=new Media(sound_ex0[2],onSuccess, onError, onStatus);
 	  sound_ex0[2].play();
-	 	function onStatus(status){
-		if( status==4){
+	 	//function onStatus(status){
+		//if( status==4){
 	  abort(z,d);
-	  }}
+	  //}}
 	  } else{
-		  sound_ex0[3]=new Media(sound_ex0[3],onSuccess, onError, onStatus);
+		 // sound_ex0[3]=new Media(sound_ex0[3],onSuccess, onError, onStatus);
 		  sound_ex0[3].play();
-		function onStatus(status){
-		if( status==4){
+		//function onStatus(status){
+		//if( status==4){
 		  abort(z,d);
-	  }}
+	  //}}
 }//function countdown
 				  
 function abort(z,d){
