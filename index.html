@@ -22,7 +22,7 @@ $.mobile.allowCrossDomainPages = true;
 });
 </script>
 <script src="js/jquery.mobile-1.4.5.min.js"></script>
-<script type="text/javascript" src="js/katabata_app_safe.js"></script>
+<script type="text/javascript" src="js/katabata_app_new.js"></script>
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?&sensor=true"></script>
 <script type="text/javascript" src="js/gmaps.min.js"></script>
 <script type='application/javascript' src='js/fastclick.js'></script>
@@ -44,9 +44,7 @@ navigator.splashscreen.hide();
 	background-image: url(img/vertical-gradient-yellow.png);
 	background-repeat: repeat-x;
 }
-#audios{
-	display: none;
-}
+
 #display{
 	z-index: 10;
 	background-repeat: no-repeat;
@@ -71,12 +69,13 @@ navigator.splashscreen.hide();
 }
 
 #container {
-	display: none;
+	>display: none;
 	position: relative;
 	background-color: #FF0;
 	margin-top: 80px;
 	margin-left: 48%;
-	margin right: 52%;
+	margin-right: 52%;
+	z-index: 100;
 }
 
 .pulse {
@@ -166,7 +165,7 @@ navigator.splashscreen.hide();
 	width:100%;
 	text-align: center;
 	border:none;
-	background-image: url(../img/app_header_bg.jpg);
+	background-color: fcf176;
 	background-repeat: repeat-x;
 	font-family: "Droid Sans", Arial, Helvetica, sans-serif;
 	font-size: 80%;
@@ -192,32 +191,9 @@ navigator.splashscreen.hide();
 <body>
 <div data-role="page" data-theme="a" id="main">
 
-	<div data-role="ui-content" data-theme="a">
-    <a href="#" id="ex2_btn" class="ui-btn ui-icon-eye ui-btn-icon-left ui-btn-icon-right ui-icon-carat-r">Do the KA-TABATA!</a>
-    
-    <br />
-<div id="audios">
-<audio class="ex2" controls>
-<source src="sounds/ex1.mp3" type="audio/mpeg"> 
-</audio>
+<div data-role="ui-content" data-theme="a">
 
-<audio class="ex0" controls>
-<source src="sounds/go.mp3" type="audio/mpeg"> 
-</audio>
-<audio class="ex0" controls>
-<source src="sounds/whip.mp3" type="audio/mpeg"> 
-</audio>
-<audio class="ex0" controls>
-<source src="sounds/rest.mp3" type="audio/mpeg"> 
-</audio>
-<audio class="ex0" controls>
-<source src="sounds/applause.mp3" type="audio/mpeg"> 
-</audio>
-<audio class="ex0" controls>
-<source src="sounds/heartbeat.mp3" type="audio/mpeg"> 
-</audio>
-
-</div>
+<a href="#" id="ex2_btn" class="ui-btn ui-icon-eye ui-btn-icon-left ui-btn-icon-right ui-icon-carat-r">Do the KA-TABATA!</a>
 
 <div id="display">
 
@@ -238,6 +214,7 @@ navigator.splashscreen.hide();
       <p><input name="stop_btn" id="stop_btn" type="button" value="End Current Session"></p>
       <p>&copy; Wolf</p>
     </div>
+
 </div>
 </body>
 </html>
