@@ -47,7 +47,7 @@ function onError(error){
 }
 
 function onStatus(status){
-if( status==exise1.MEDIA_STOPPED ) {
+if( status==Media.MEDIA_STOPPED ) {
             alert('has stopped');
 			movetogo();
         }
