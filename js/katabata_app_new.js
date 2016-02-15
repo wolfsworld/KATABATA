@@ -46,7 +46,7 @@ function onError(error){
 }
 
 function onStatus(status){
-if( status==Media.MEDIA_STOPPED ) {
+if( status==exercises[0].Media.MEDIA_STOPPED ) {
             //alert('has stopped');
 			movetogo();
         }
