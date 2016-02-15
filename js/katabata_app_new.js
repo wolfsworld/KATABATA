@@ -64,7 +64,7 @@ sound_ex2[i].release()
 abortTimer();
 $('#rd_counter').empty();
 $('#displayer').empty();
-$('#container').css("display", "none");
+$('#pulse').css("display", "none");
 });
 
 
