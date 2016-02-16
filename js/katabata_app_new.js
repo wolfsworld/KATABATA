@@ -4,10 +4,7 @@ function onDeviceReady() {
 function checkplatform(){
 if(device.platform.toLowerCase() === "android"){
 	return "/android_asset/www/";
-}
-else{
-	return '';
-}
+}else{	return '';}
 }
 
 var mediaURL=checkplatform();
@@ -28,9 +25,7 @@ sounds.push(new Media(""+mediaURL+"sounds/applause.mp3"));
 exercises.push(new Media(""+mediaURL+"sounds/ex1.mp3",onSuccess, onError, onStatus));
 
 function onSuccess(){}
-
 function onError(error){}
-
 function onStatus(status){
 if( status==Media.MEDIA_STOPPED ) {
 			movetogo();
@@ -123,8 +118,8 @@ function countdown1(v){
 function countdown(v,z,d){
 	//alert('this is v'+v+' this is z'+z+' this is d'+d+'');
 	//alert(z);
-$('#container').css("display", "block");
-$('#pulse').toggle( "slow" );
+//$('#container').css("display", "block");
+$('#container').toggle( "slow" );
 	  if(v=='g'){
 	  sound_ex0[2].play();
 	  abort(z,d);
