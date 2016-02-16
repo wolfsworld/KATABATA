@@ -118,7 +118,7 @@ function countdown1(v){
 function countdown(v,z,d){
 	//alert('this is v'+v+' this is z'+z+' this is d'+d+'');
 	//alert(z);
-//$('#container').css("display", "block");
+$('#container').css("display", "block");
 $('#pulse').toggle( "slow" );
 	  if(v=='g'){
 	  sound_ex0[2].play();
