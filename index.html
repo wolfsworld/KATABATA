@@ -82,6 +82,24 @@ navigator.splashscreen.hide();
 	position: absolute;
 }
 
+
+/* Chrome, Safari, Opera */ 
+@-webkit-keyframes mymove {
+    0%   {top: 0px;}
+    25%  {top: 200px;}
+    75%  {top: 50px}
+    100% {top: 100px;}
+}
+
+/* Standard syntax */
+@keyframes mymove {
+    0%   {top: 0px;}
+    25%  {top: 200px;}
+    75%  {top: 50px}
+    100% {top: 100px;}
+}
+
+/* The element to apply the animation to */
 .pulse {
 	width: 60px;
 	height: 60px;
@@ -91,20 +109,9 @@ navigator.splashscreen.hide();
 	border-radius: 120px;
 	background-color: #FF0;
 	position: absolute;
-}
-/* The animation code */
-@keyframes example {
-    0%   {background-color: red;}
-    25%  {background-color: yellow;}
-    50%  {background-color: blue;}
-    100% {background-color: green;}
-}
-
-/* The element to apply the animation to */
-.pulse {
     background-color: red;
-    animation-name: example;
-    animation-duration: 4s;
+    -webkit-animation: mymove 1s infinite;
+   animation: mymove 1s infinite;;
 }
 
 
