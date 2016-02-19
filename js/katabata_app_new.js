@@ -11,6 +11,7 @@ var mediaURL=checkplatform();
 
 $(document).ready(function(){
 
+
 var sounds = [];
 var exercises = [];
 
@@ -170,6 +171,7 @@ $('#displayer').empty();
 
 function abortTimer() {
 clearInterval(tid);
+
 }
 
 });//document ready
