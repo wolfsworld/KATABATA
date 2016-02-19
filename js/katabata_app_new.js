@@ -99,12 +99,14 @@ function movetogo(){
 }
 
 function go_ex(g){
+	$('.pulse').css({"background-color": "red"});
 	sound_ex0[0].play();//play GO
 		countdown1('g');
 }
 
 function rest_ex(r){
 	sound_ex0[1].play();
+	$('.pulse').css({"background-color": "blue"});
 		countdown1('r');
 }
 
