@@ -113,7 +113,6 @@ function rest_ex(r){
 }
 
 function countdown1(v){
-	$('.pulse').css({"display":"block"});
 	var v=v;
 	var z=0;
 	var d=5;//duration
@@ -125,6 +124,7 @@ function countdown(v,z,d){
 	//alert(z);
 $('#container').css("display", "block");
 $('.pulse').empty();
+$('.pulse').css({"display":"block"});
 //$('#container').toggle('slow');
 	  if(v=='g'){
 	  sound_ex0[2].play();
