@@ -11,6 +11,7 @@ var mediaURL=checkplatform();
 
 $(document).ready(function(){
 
+$('.pulse').css({"display":"none"});
 
 var sounds = [];
 var exercises = [];
@@ -112,6 +113,7 @@ function rest_ex(r){
 }
 
 function countdown1(v){
+	$('.pulse').css({"display":"block"});
 	var v=v;
 	var z=0;
 	var d=5;//duration
