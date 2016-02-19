@@ -75,6 +75,7 @@ abortTimer();
 
 $('#rd_counter').empty();
 $('#displayer').empty();
+$('.pulse').empty();
 $('#container').css("display", "none");
 
 var exc=pick;
@@ -136,14 +137,17 @@ function abort(z,d){
 $('#displayer').empty();
 		if(v=='g'){
 		$('#displayer').append('Keep going for '+(d-z)+' seconds');
+		$('.pulse').append(d-z);
 		}else{
 		$('#displayer').append('Relax for '+(d-z)+' seconds');
+		$('.pulse').append(d-z);
 		}
 		
 		if(z>=d){
 		  $('#container').css("display", "none");
 		  abortTimer();
 		  $('#displayer').empty();
+		  $('.pulse').empty();
 		  ct=ct+1;
 		  rd=ct/2;
 			  //toggle
@@ -161,6 +165,7 @@ $('#displayer').empty();
 				sound_ex0[4].play();
 				$('#rd_counter').empty();
 				$('#displayer').empty();
+				$('.pulse').empty();
 				$('#container').css("display", "none");
 				ct=0;
 				z=0;
