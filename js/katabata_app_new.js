@@ -38,15 +38,13 @@ var sound_ex0=sounds;
 var sound_ex2=exercises;
 var tid;
 var running=false;
+
 //Select random exercise
 var lgth=sound_ex2.length-1;
 //pick random number
 var pick=Math.floor((Math.random() * lgth) + 0);
 
-$('#ex2_btn').on('click', function (){
-prep_tabata();
-});
-
+//stop button to clear all intervalls and containers
 $('#stop_btn').on('click', function (){
 for(var i=0; i<sound_ex0.length; i++){
 sound_ex0[i].stop();
@@ -62,10 +60,13 @@ $('#displayer').empty();
 $('#container').css("display", "none");
 });
 
-
+//start exercise
+$('#ex2_btn').on('click', function (){
+prep_tabata();
+});
 
 function prep_tabata(){
-
+//check if it is running. If yes, stop everything and clear display containers and continue from start
 if(running==true){
 ct=0;
 z=0;
@@ -79,11 +80,9 @@ var exc=pick;
 exercise(exc);
 }//end if running == true
 else{
-
 var exc=pick;
 exercise(exc);
 }
-
 }//end function prep_tabata
 
 
@@ -119,7 +118,7 @@ function countdown(v,z,d){
 	//alert('this is v'+v+' this is z'+z+' this is d'+d+'');
 	//alert(z);
 $('#container').css("display", "block");
-$('#container').toggle('slow');
+//$('#container').toggle('slow');
 	  if(v=='g'){
 	  sound_ex0[2].play();
 	  abort(z,d);

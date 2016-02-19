@@ -73,7 +73,7 @@ navigator.splashscreen.hide();
 }
 
 #container {
-	display: none;
+	>display: none;
 	position: relative;
 	background-color: #FF0;
 	margin-top: 80px;
@@ -83,24 +83,25 @@ navigator.splashscreen.hide();
 }
 
 
-/* Chrome, Safari, Opera 
+/* Chrome, Safari, Opera */
 @-webkit-keyframes mymove {
     0%   {top: 0px;}
-    25%  {top: 200px;}
-    75%  {top: 50px}
-    100% {top: 100px;}
+    25%  {top: 10px;}
+    75%  {top: 100px}
+    100% {top: 0px;}
 }
 
-/* Standard syntax 
+/* Standard syntax */
 @keyframes mymove {
     0%   {top: 0px;}
-    25%  {top: 200px;}
-    75%  {top: 50px}
-    100% {top: 100px;}
-}*/ 
+    25%  {top: 10px;}
+    75%  {top: 100px}
+    100% {top: 0px;}
+}
 
 /* The element to apply the animation to */
 .pulse {
+	top: 0px;
 	width: 60px;
 	height: 60px;
 	border: 20px solid #f00;
@@ -110,8 +111,8 @@ navigator.splashscreen.hide();
 	background-color: #FF0;
 	position: absolute;
     background-color: red;
-   > -webkit-animation: mymove 1s infinite;
-   > animation: mymove 1s infinite;;
+   -webkit-animation: mymove 1s infinite;
+   animation: mymove 1s infinite;;
 }
 
 
@@ -157,7 +158,7 @@ navigator.splashscreen.hide();
 <div id="rd_counter"></div>
 
 <div id="container">
-  <div class="pulse"></div>
+  <div class="pulse">p</div>
 </div>
 
 <div id="displayer"></div>
