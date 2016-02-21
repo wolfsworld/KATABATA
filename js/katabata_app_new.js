@@ -115,7 +115,11 @@ function rest_ex(r){
 function countdown1(v){
 	var v=v;
 	var z=0;
-	var d=5;//duration
+	if(v=='g'){
+	var d=10;//counts on go
+	}else{
+	var d=5;//counts on rest
+	}
 	tid = setInterval(function(){countdown(v,z++,d);}, 1000);
 }
 
