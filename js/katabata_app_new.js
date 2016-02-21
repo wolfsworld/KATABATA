@@ -24,7 +24,17 @@ sounds.push(new Media(""+mediaURL+"sounds/whip.mp3"));
 sounds.push(new Media(""+mediaURL+"sounds/heartbeat.mp3"));
 sounds.push(new Media(""+mediaURL+"sounds/applause.mp3"));
 
+exercises.push(new Media(""+mediaURL+"sounds/ex0.mp3",onSuccess, onError, onStatus));
 exercises.push(new Media(""+mediaURL+"sounds/ex1.mp3",onSuccess, onError, onStatus));
+exercises.push(new Media(""+mediaURL+"sounds/ex2.mp3",onSuccess, onError, onStatus));
+exercises.push(new Media(""+mediaURL+"sounds/ex3.mp3",onSuccess, onError, onStatus));
+exercises.push(new Media(""+mediaURL+"sounds/ex4.mp3",onSuccess, onError, onStatus));
+exercises.push(new Media(""+mediaURL+"sounds/ex5.mp3",onSuccess, onError, onStatus));
+exercises.push(new Media(""+mediaURL+"sounds/ex6.mp3",onSuccess, onError, onStatus));
+exercises.push(new Media(""+mediaURL+"sounds/ex7.mp3",onSuccess, onError, onStatus));
+exercises.push(new Media(""+mediaURL+"sounds/ex8.mp3",onSuccess, onError, onStatus));
+exercises.push(new Media(""+mediaURL+"sounds/ex9.mp3",onSuccess, onError, onStatus));
+exercises.push(new Media(""+mediaURL+"sounds/ex10.mp3",onSuccess, onError, onStatus));
 
 function onSuccess(){}
 function onError(error){}
@@ -58,7 +68,7 @@ sound_ex2[i].release()
 }
 abortTimer();
 $('#rd_counter').empty();
-$('#displayer').empty();
+$('#countdown').empty();
 $('#container').css("display", "none");
 });
 
@@ -75,7 +85,7 @@ z=0;
 abortTimer();
 
 $('#rd_counter').empty();
-$('#displayer').empty();
+$('#countdown').empty();
 $('.pulse').empty();
 $('#container').css("display", "none");
 
@@ -141,19 +151,19 @@ $('.pulse').css({"display":"block"});
 function abort(z,d){
 	//alert('this is abort');
 	//alert('this is z'+z+' this is d'+d+'');			
-$('#displayer').empty();
+$('#countdown').empty();
 		if(v=='g'){
-		$('#displayer').append('Keep going for '+(d-z)+' seconds');
+		$('#countdown').append('Keep going for '+(d-z)+' seconds');
 		$('.pulse').append(d-z);
 		}else{
-		$('#displayer').append('Relax for '+(d-z)+' seconds');
+		$('#countdown').append('Relax for '+(d-z)+' seconds');
 		$('.pulse').append(d-z);
 		}
 		
 		if(z>=d){
 		  $('#container').css("display", "none");
 		  abortTimer();
-		  $('#displayer').empty();
+		  $('#countdown').empty();
 		  $('.pulse').empty();
 		  ct=ct+1;
 		  rd=ct/2;
@@ -171,7 +181,7 @@ $('#displayer').empty();
 				$('#container').css("display", "none");
 				sound_ex0[4].play();
 				$('#rd_counter').empty();
-				$('#displayer').empty();
+				$('#countdown').empty();
 				$('.pulse').empty();
 				$('#container').css("display", "none");
 				ct=0;
