@@ -112,7 +112,7 @@ function movetogo(){
 
 function go_ex(g){
 	$('.pulse').css({"background-color": "red"});
-	sound_ex0[0].play();//play GO
+	//sound_ex0[0].play();//play GO
 		countdown1('g');
 }
 
