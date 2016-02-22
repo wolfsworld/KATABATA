@@ -24,20 +24,21 @@ sounds.push(new Media(""+mediaURL+"sounds/whip.mp3"));
 sounds.push(new Media(""+mediaURL+"sounds/heartbeat.mp3"));
 sounds.push(new Media(""+mediaURL+"sounds/applause.mp3"));
 
-
 exercises.push(['drill1',new Media(""+mediaURL+"sounds/ex0.mp3",onSuccess,onError,onStatus)]);
 exercises.push(['drill2',new Media(""+mediaURL+"sounds/ex1.mp3",onSuccess,onError,onStatus)]);
+exercises.push(['drill3',new Media(""+mediaURL+"sounds/ex2.mp3",onSuccess,onError,onStatus)]);
+exercises.push(['drill4',new Media(""+mediaURL+"sounds/ex3.mp3",onSuccess,onError,onStatus)]);
+exercises.push(['drill5',new Media(""+mediaURL+"sounds/ex4.mp3",onSuccess,onError,onStatus)]);
+exercises.push(['drill6',new Media(""+mediaURL+"sounds/ex5.mp3",onSuccess,onError,onStatus)]);
+exercises.push(['drill7',new Media(""+mediaURL+"sounds/ex6.mp3",onSuccess,onError,onStatus)]);
+exercises.push(['drill8',new Media(""+mediaURL+"sounds/ex7.mp3",onSuccess,onError,onStatus)]);
+exercises.push(['drill9',new Media(""+mediaURL+"sounds/ex8.mp3",onSuccess,onError,onStatus)]);
+exercises.push(['drill10',new Media(""+mediaURL+"sounds/ex9.mp3",onSuccess,onError,onStatus)]);
 
 //exercises.push(new Media('drill1',''+mediaURL+'sounds/ex0.mp3',onSuccess, onError, onStatus));
-
-
+//exercises.push(new Media('drill2',''+mediaURL+'sounds/ex1.mp3',onSuccess, onError, onStatus));
 //exercises.push(new Media(""+mediaURL+"sounds/ex1.mp3",onSuccess, onError, onStatus));
 //exercises.push(new Media(""+mediaURL+"sounds/ex2.mp3",onSuccess, onError, onStatus));
-
-
-
-
-
 
 function onSuccess(){}
 function onError(error){}
@@ -74,14 +75,15 @@ sounds[i].stop();
 sounds[i].release();
 }
 for(var i=0; i<exercises.length; i++){
-exercises[i].stop();
-exercises[i].release()
+exercises[i][1].stop();
+exercises[i][1].release()
 }
 abortTimer();
 $('#rd_counter').empty();
 $('#countdown').empty();
 $('#container').css("display", "none");
-
+//document.location.href="#page0";
+self.location.href = 'index.html';
 });
 
 //start exercise
