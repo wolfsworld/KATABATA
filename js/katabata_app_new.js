@@ -39,7 +39,7 @@ exercises.push(['Sprints',new Media(""+mediaURL+"sounds/ex4.mp3",onSuccess,onErr
 exercises.push(['Rope-Jumps',new Media(""+mediaURL+"sounds/ex5.mp3",onSuccess,onError,onStatus)]);
 exercises.push(['Drink a beer',new Media(""+mediaURL+"sounds/ex6.mp3",onSuccess,onError,onStatus)]);
 exercises.push(['Sing a Song',new Media(""+mediaURL+"sounds/ex7.mp3",onSuccess,onError,onStatus)]);
-exercises.push(['Dance a Dance',new Media(""+mediaURL+"sounds/ex8.mp3",onSuccess,onError,onStatus)]);
+exercises.push(['Dance a Jig',new Media(""+mediaURL+"sounds/ex8.mp3",onSuccess,onError,onStatus)]);
 exercises.push(['Go Home',new Media(""+mediaURL+"sounds/ex9.mp3",onSuccess,onError,onStatus)]);
 
 //exercises.push(new Media('drill1',''+mediaURL+'sounds/ex0.mp3',onSuccess, onError, onStatus));
@@ -98,14 +98,19 @@ document.location.href="#page0";
 //hit specific exercise
 $(document).on('click', '.ex_choice a', function () {
 pick=$(this).attr("id");
-prep_tabata(pick);
+//prep_tabata(pick);
 });
 
 //hit Random Button
 $('#rand_kata_btn').on('click', function (){
 $('#countdown').css({"background-image":"url(img/red_btn_30.png)"});
+//prep_tabata(pick);
+});
+
+$(document).on('click', '#start_btn', function () {
 prep_tabata(pick);
 });
+
 
 function prep_tabata(pick){
 $("#ex_display").empty();	
