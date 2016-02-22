@@ -88,6 +88,7 @@ document.location.href="#page0";
 
 //start exercise
 $('#rand_kata_btn').on('click', function (){
+$('#countdown').css({"background-image":"url(img/red_btn_30.png)"});
 prep_tabata();
 });
 
@@ -125,14 +126,16 @@ function movetogo(){
 }
 
 function go_ex(g){
+	$('#countdown').css({"background-image":"url(img/red_btn_30.png)"});
 	$('.pulse').css({"background-color": "red"});
 	sounds[0].play();//play GO
 		countdown1('g');
 }
 
 function rest_ex(r){
-	sounds[1].play();
+	sounds[1].play();//play REST
 	$('.pulse').css({"background-color": "blue"});
+	$('#countdown').css({"background-image":"url(img/btn_bg_green80.png)"});
 		countdown1('r');
 }
 
