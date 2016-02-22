@@ -82,8 +82,8 @@ abortTimer();
 $('#rd_counter').empty();
 $('#countdown').empty();
 $('#container').css("display", "none");
-//document.location.href="#page0";
-self.location.href = 'index.html';
+document.location.href="#page0";
+//self.location.href = 'index.html';
 });
 
 //start exercise
@@ -116,7 +116,7 @@ exercise(exc);
 function exercise(exc){
 running=true;
 $('#rd_counter').append('Round #1 of 8');
-var ex_sound=exercises[exc];
+var ex_sound=exercises[exc][1];
 ex_sound.play();
 }
 
