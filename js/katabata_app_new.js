@@ -96,11 +96,15 @@ document.location.href="#page0";
 //hit specific exercise
 $(document).on('click', '.ex_choice a', function () {
 pick=$(this).attr("id");
+$("#ex_display").empty();	
+$("#ex_display").append(exercises[pick][0]);
 //prep_tabata(pick);
 });
 
 //hit Random Button
 $('#rand_kata_btn').on('click', function (){
+$("#ex_display").empty();	
+$("#ex_display").append(exercises[pick][0]);
 $('#countdown').css({"background-image":"url(img/red_btn_30.png)"});
 var lgth=exercises.length-1;
 //pick random number
@@ -114,9 +118,6 @@ prep_tabata(pick);
 
 
 function prep_tabata(pick){
-	alert(pick);
-$("#ex_display").empty();	
-$("#ex_display").append(exercises[pick][0]);
 //check if it is running. If yes, stop everything and clear display containers and continue from start
 if(running==true){
 ct=0;
