@@ -15,8 +15,16 @@ $('.pulse').css({"display":"none"});
 
 var sounds = [];
 var exercises = [];
+//var kudos = [];
 
 var resource="/android_asset/www/";
+
+
+var kudos_all=["Great Job!","Wonderful!","Strong Performance!","Rock On!","Wow!!","Look at You!"];
+var kudos_lgth=kudos_all.length;
+var kudos_pick=Math.floor((Math.random() * kudos_lgth) + 0);
+var kudos=kudos_all[kudos_pick];
+
 
 sounds.push(new Media(""+mediaURL+"sounds/go.mp3"));
 sounds.push(new Media(""+mediaURL+"sounds/rest.mp3"));
@@ -126,7 +134,7 @@ function movetogo(){
 }
 
 function go_ex(g){
-	$('#countdown').css({"background-image":"url(img/red_btn_30.png)","display":"block"});
+	$('#countdown').css({"background-image":"url(img/red_btn_30.png)","color":"#F8E8FF","display":"block"});
 	$('.pulse').css({"background-color": "red"});
 	sounds[0].play();//play GO
 		countdown1('g');
@@ -135,7 +143,7 @@ function go_ex(g){
 function rest_ex(r){
 	sounds[1].play();//play REST
 	$('.pulse').css({"background-color": "blue"});
-	$('#countdown').css({"background-image":"url(img/btn_bg_green80.png)","display":"block"});
+	$('#countdown').css({"background-image":"url(img/btn_bg_lightgreen80.png)","color":"green","display":"block"});
 		countdown1('r');
 }
 
@@ -198,11 +206,14 @@ $('#countdown').empty();
 				$('#container').css("display", "none");
 				sounds[4].play();
 				$('#rd_counter').empty();
+				$('#rd_counter').append(kudos);
 				$('#countdown').empty();
+				$('#countdown').css({"display":"none"});
 				$('.pulse').empty();
 				$('#container').css("display", "none");
 				ct=0;
 				z=0;
+				document.location.href="#page0";
 				running=false;
 			  }
 		  }
