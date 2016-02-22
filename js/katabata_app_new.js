@@ -152,6 +152,7 @@ function movetogo(){
 }
 
 function go_ex(g){
+	$('#display').css({"background-image": "url(img/katabg.png"});
 	$('#countdown').css({"background-image":"url(img/red_btn_30.png)","color":"#F8E8FF","display":"block"});
 	$('.pulse').css({"background-color": "red","color":"white"});
 	sounds[0].play();//play GO
@@ -160,6 +161,7 @@ function go_ex(g){
 
 function rest_ex(r){
 	sounds[1].play();//play REST
+	$('#display').css({"background-image": "url(img/katabg_green.png"});
 	$('.pulse').css({"background-color": "#c1ffb0","color":"green"});
 	$('#countdown').css({"background-image":"url(img/btn_bg_lightgreen80.png)","color":"green","display":"block"});
 		countdown1('r');
