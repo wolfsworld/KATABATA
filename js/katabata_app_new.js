@@ -19,8 +19,7 @@ var exercises = [];
 
 var resource="/android_asset/www/";
 
-
-var kudos_all=["Great Job!","Wonderful!","Strong Performance!","Rock On!","Wow!!","Look at You!"];
+var kudos_all=["Great Job!","Wonderful!","Strong Performance!","Rock On!","Wow!!","Look at You!","You made it!!","Nice Workout!"];
 var kudos_lgth=kudos_all.length;
 var kudos_pick=Math.floor((Math.random() * kudos_lgth) + 0);
 var kudos=kudos_all[kudos_pick];
@@ -32,10 +31,10 @@ sounds.push(new Media(""+mediaURL+"sounds/whip.mp3"));
 sounds.push(new Media(""+mediaURL+"sounds/heartbeat.mp3"));
 sounds.push(new Media(""+mediaURL+"sounds/applause.mp3"));
 
-exercises.push(['drill1',new Media(""+mediaURL+"sounds/ex0.mp3",onSuccess,onError,onStatus)]);
-exercises.push(['drill2',new Media(""+mediaURL+"sounds/ex1.mp3",onSuccess,onError,onStatus)]);
-exercises.push(['drill3',new Media(""+mediaURL+"sounds/ex2.mp3",onSuccess,onError,onStatus)]);
-exercises.push(['drill4',new Media(""+mediaURL+"sounds/ex3.mp3",onSuccess,onError,onStatus)]);
+exercises.push(['Push-ups',new Media(""+mediaURL+"sounds/ex0.mp3",onSuccess,onError,onStatus)]);
+exercises.push(['Burpees',new Media(""+mediaURL+"sounds/ex1.mp3",onSuccess,onError,onStatus)]);
+exercises.push(['Sit-ups',new Media(""+mediaURL+"sounds/ex2.mp3",onSuccess,onError,onStatus)]);
+exercises.push(['Squats',new Media(""+mediaURL+"sounds/ex3.mp3",onSuccess,onError,onStatus)]);
 exercises.push(['drill5',new Media(""+mediaURL+"sounds/ex4.mp3",onSuccess,onError,onStatus)]);
 exercises.push(['drill6',new Media(""+mediaURL+"sounds/ex5.mp3",onSuccess,onError,onStatus)]);
 exercises.push(['drill7',new Media(""+mediaURL+"sounds/ex6.mp3",onSuccess,onError,onStatus)]);
@@ -59,7 +58,7 @@ if( status==Media.MEDIA_STOPPED ) {
 var num_exercises=exercises.length;
 var ex_list='';
 for(i=0; i<num_exercises; i++){
-ex_list+='<li><a href="#" data-transition="turn" id="exer1_btn" class="ui-btn ui-icon-heart ui-btn-icon-left">'+exercises[i][0]+'</a></li>';
+ex_list+='<li class="ex_choice"><a id="'+i+'" href="#main" data-transition="turn" class="ui-btn ui-icon-heart ui-btn-icon-left">'+exercises[i][0]+'</a></li>';
 }
 $('#ex_listview').append(ex_list);
 
@@ -95,12 +94,20 @@ document.location.href="#page0";
 });
 
 //start exercise
-$('#rand_kata_btn').on('click', function (){
-$('#countdown').css({"background-image":"url(img/red_btn_30.png)"});
-prep_tabata();
+//hit specific exercise
+$(document).on('click', '.ex_choice a', function () {
+pick=$(this).attr("id");
+$("#ex_display").append(exercises[pick][0]);
+prep_tabata(pick);
 });
 
-function prep_tabata(){
+//hit Random Button
+$('#rand_kata_btn').on('click', function (){
+$('#countdown').css({"background-image":"url(img/red_btn_30.png)"});
+prep_tabata(pick);
+});
+
+function prep_tabata(pick){
 //check if it is running. If yes, stop everything and clear display containers and continue from start
 if(running==true){
 ct=0;
