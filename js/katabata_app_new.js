@@ -62,7 +62,7 @@ ex_list+='<li class="ex_choice"><a id="'+i+'" href="#main" data-transition="turn
 }
 $('#ex_listview').append(ex_list);
 
-
+var pick;
 var ct=0;
 var z=0;
 //var sounds=sounds;
@@ -71,9 +71,7 @@ var tid;
 var running=false;
 
 //Select random exercise
-var lgth=exercises.length-1;
-//pick random number
-var pick=Math.floor((Math.random() * lgth) + 0);
+
 
 //stop button to clear all intervalls and containers
 $('#stop_btn').on('click', function (){
@@ -104,6 +102,9 @@ pick=$(this).attr("id");
 //hit Random Button
 $('#rand_kata_btn').on('click', function (){
 $('#countdown').css({"background-image":"url(img/red_btn_30.png)"});
+var lgth=exercises.length-1;
+//pick random number
+pick=Math.floor((Math.random() * lgth) + 0);
 //prep_tabata(pick);
 });
 
@@ -113,6 +114,7 @@ prep_tabata(pick);
 
 
 function prep_tabata(pick){
+	alert(pick);
 $("#ex_display").empty();	
 $("#ex_display").append(exercises[pick][0]);
 //check if it is running. If yes, stop everything and clear display containers and continue from start
