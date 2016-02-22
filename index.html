@@ -182,7 +182,7 @@ navigator.splashscreen.hide();
 	font-family: "Droid Sans", Arial, Helvetica, sans-serif;
 	font-size: 80%;
 	height: 20px;
-	color: #666;
+	color: #999;
 	vertical-align: middle;
 }
 
@@ -223,6 +223,7 @@ ul li{
 	width: 100%;
 	text-align: center;
 	margin-top: -15px;
+	margin-bottom: -35px;
 	z-index: 100;
 }
 </style>
@@ -242,13 +243,9 @@ ul li{
 <a href="#main" data-transition="turn" id="rand_kata_btn" class="ui-btn ui-icon-eye ui-btn-icon-left ui-btn-icon-right ui-icon-carat-r">Do a random exercise Tabata</a>
 <div data-role="collapsible" id="selection" data-collapsed="true" data-theme="a" data-content-theme="a" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
 <h4>Select specific exercises...</h4>
-    <ul data-role="listview" data-filter="false" id="ex_listview">
-
-    </ul>
+    <ul data-role="listview" data-filter="false" id="ex_listview"></ul>
 </div>
-
 </div>
-
     
 <div data-role="footer" data-theme="a"><p>&copy; Mobile Workouts by Wolf</p></div>
 
@@ -257,7 +254,7 @@ ul li{
 
 
 <div data-role="page" data-theme="a" id="main">
-<div data-role="header" id="ex_display" data-theme="a" data-position="fixed">Header</div>
+<div data-role="header" id="ex_display" data-theme="a" data-position="fixed"></div>
 <div data-role="ui-content" data-theme="a">
 <div id="start_btn"><img src="img/glasbutton2.png" width="150px"></div>
 <div id="display">
