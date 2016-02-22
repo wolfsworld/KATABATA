@@ -25,17 +25,14 @@ sounds.push(new Media(""+mediaURL+"sounds/heartbeat.mp3"));
 sounds.push(new Media(""+mediaURL+"sounds/applause.mp3"));
 
 
-var exercise_0=new Media(""+mediaURL+"sounds/ex0.mp3",onSuccess, onError, onStatus);
-exercise_0.name="a";
-exercises.push(new Media(""+mediaURL+"sounds/ex0.mp3",onSuccess, onError, onStatus));
+exercises.push(['drill1',new Media(""+mediaURL+"sounds/ex0.mp3",onSuccess,onError,onStatus)]);
+exercises.push(['drill2',new Media(""+mediaURL+"sounds/ex1.mp3",onSuccess,onError,onStatus)]);
 
-var exercise_1=new Media(""+mediaURL+"sounds/ex1.mp3",onSuccess, onError, onStatus);
-exercise_1.name="b";
-exercises.push(new Media(""+mediaURL+"sounds/ex1.mp3",onSuccess, onError, onStatus));
+//exercises.push(new Media('drill1',''+mediaURL+'sounds/ex0.mp3',onSuccess, onError, onStatus));
 
-var exercise_2=new Media(""+mediaURL+"sounds/ex2.mp3",onSuccess, onError, onStatus);
-exercise_2.name="c";
-exercises.push(new Media(""+mediaURL+"sounds/ex2.mp3",onSuccess, onError, onStatus));
+
+//exercises.push(new Media(""+mediaURL+"sounds/ex1.mp3",onSuccess, onError, onStatus));
+//exercises.push(new Media(""+mediaURL+"sounds/ex2.mp3",onSuccess, onError, onStatus));
 
 
 
@@ -53,7 +50,7 @@ if( status==Media.MEDIA_STOPPED ) {
 var num_exercises=exercises.length;
 var ex_list='';
 for(i=0; i<num_exercises; i++){
-ex_list+='<li><a href="#" data-transition="turn" id="exer1_btn" class="ui-btn ui-icon-heart ui-btn-icon-left">'+exercises[i].name+'</a></li>';
+ex_list+='<li><a href="#" data-transition="turn" id="exer1_btn" class="ui-btn ui-icon-heart ui-btn-icon-left">'+exercises[i][0]+'</a></li>';
 }
 $('#ex_listview').append(ex_list);
 
