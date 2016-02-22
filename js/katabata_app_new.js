@@ -77,6 +77,12 @@ var pick=Math.floor((Math.random() * lgth) + 0);
 
 //stop button to clear all intervalls and containers
 $('#stop_btn').on('click', function (){
+abortTimer();
+$('#rd_counter').empty();
+$('#countdown').empty();
+$('#container').css("display", "none");
+$("#ex_display").empty();
+
 for(var i=0; i<sounds.length; i++){
 sounds[i].stop();
 sounds[i].release();
@@ -85,12 +91,7 @@ for(var i=0; i<exercises.length; i++){
 exercises[i][1].stop();
 exercises[i][1].release()
 }
-abortTimer();
-$('#rd_counter').empty();
-$('#countdown').empty();
-$('#container').css("display", "none");
 document.location.href="#page0";
-//self.location.href = 'index.html';
 });
 
 //start exercise
@@ -222,7 +223,7 @@ $('#countdown').empty();
 				$('#container').css("display", "none");
 				ct=0;
 				z=0;
-				setTimeout(function(){ document.location.href="#page0"; }, 3000);
+				setTimeout(function(){ document.location.href="#page0"; }, 5000);
 				running=false;
 			  }
 		  }
