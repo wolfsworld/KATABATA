@@ -44,36 +44,45 @@ if( status==Media.MEDIA_STOPPED ) {
         }else{}}
 
 
+var num_exercises=exercises.length;
+var ex_list='';
+for(i=0; i<num_exercises; i++){
+ex_list+='<li><a href="#" data-transition="turn" id="exer1_btn" class="ui-btn ui-icon-heart ui-btn-icon-left">'+exercises[i]+'</a></li>';
+}
+$('#ex_listview').append(exlist);
+
+
 var ct=0;
 var z=0;
-var sound_ex0=sounds;
-var sound_ex2=exercises;
+//var sounds=sounds;
+//var exercises=exercises;
 var tid;
 var running=false;
 
 //Select random exercise
-var lgth=sound_ex2.length-1;
+var lgth=exercises.length-1;
 //pick random number
 var pick=Math.floor((Math.random() * lgth) + 0);
 
 //stop button to clear all intervalls and containers
 $('#stop_btn').on('click', function (){
-for(var i=0; i<sound_ex0.length; i++){
-sound_ex0[i].stop();
-sound_ex0[i].release();
+for(var i=0; i<sounds.length; i++){
+sounds[i].stop();
+sounds[i].release();
 }
-for(var i=0; i<sound_ex2.length; i++){
-sound_ex2[i].stop();
-sound_ex2[i].release()
+for(var i=0; i<exercises.length; i++){
+exercises[i].stop();
+exercises[i].release()
 }
 abortTimer();
 $('#rd_counter').empty();
 $('#countdown').empty();
 $('#container').css("display", "none");
+
 });
 
 //start exercise
-$('#ex2_btn').on('click', function (){
+$('#rand_kata_btn').on('click', function (){
 prep_tabata();
 });
 
@@ -102,7 +111,7 @@ exercise(exc);
 function exercise(exc){
 running=true;
 $('#rd_counter').append('Round #1 of 8');
-var ex_sound=sound_ex2[exc];
+var ex_sound=exercises[exc];
 ex_sound.play();
 }
 
@@ -112,12 +121,12 @@ function movetogo(){
 
 function go_ex(g){
 	$('.pulse').css({"background-color": "red"});
-	sound_ex0[0].play();//play GO
+	sounds[0].play();//play GO
 		countdown1('g');
 }
 
 function rest_ex(r){
-	sound_ex0[1].play();
+	sounds[1].play();
 	$('.pulse').css({"background-color": "blue"});
 		countdown1('r');
 }
@@ -141,10 +150,10 @@ $('.pulse').empty();
 $('.pulse').css({"display":"block"});
 //$('#container').toggle('slow');
 	  if(v=='g'){
-	 // sound_ex0[2].play();
+	 // sounds[2].play();
 	  abort(z,d);
 	  } else{
-		  sound_ex0[3].play();
+		  sounds[3].play();
 		  abort(z,d);
 }//function countdown
 				  
@@ -179,7 +188,7 @@ $('#countdown').empty();
 			  }
 			  else{ 
 				$('#container').css("display", "none");
-				sound_ex0[4].play();
+				sounds[4].play();
 				$('#rd_counter').empty();
 				$('#countdown').empty();
 				$('.pulse').empty();
