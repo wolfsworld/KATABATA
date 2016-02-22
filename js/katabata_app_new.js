@@ -35,12 +35,12 @@ exercises.push(['Push-ups',new Media(""+mediaURL+"sounds/ex0.mp3",onSuccess,onEr
 exercises.push(['Burpees',new Media(""+mediaURL+"sounds/ex1.mp3",onSuccess,onError,onStatus)]);
 exercises.push(['Sit-ups',new Media(""+mediaURL+"sounds/ex2.mp3",onSuccess,onError,onStatus)]);
 exercises.push(['Squats',new Media(""+mediaURL+"sounds/ex3.mp3",onSuccess,onError,onStatus)]);
-exercises.push(['drill5',new Media(""+mediaURL+"sounds/ex4.mp3",onSuccess,onError,onStatus)]);
-exercises.push(['drill6',new Media(""+mediaURL+"sounds/ex5.mp3",onSuccess,onError,onStatus)]);
-exercises.push(['drill7',new Media(""+mediaURL+"sounds/ex6.mp3",onSuccess,onError,onStatus)]);
-exercises.push(['drill8',new Media(""+mediaURL+"sounds/ex7.mp3",onSuccess,onError,onStatus)]);
-exercises.push(['drill9',new Media(""+mediaURL+"sounds/ex8.mp3",onSuccess,onError,onStatus)]);
-exercises.push(['drill10',new Media(""+mediaURL+"sounds/ex9.mp3",onSuccess,onError,onStatus)]);
+exercises.push(['Sprints',new Media(""+mediaURL+"sounds/ex4.mp3",onSuccess,onError,onStatus)]);
+exercises.push(['Rope-Jumps',new Media(""+mediaURL+"sounds/ex5.mp3",onSuccess,onError,onStatus)]);
+exercises.push(['Drink a beer',new Media(""+mediaURL+"sounds/ex6.mp3",onSuccess,onError,onStatus)]);
+exercises.push(['Sing a Song',new Media(""+mediaURL+"sounds/ex7.mp3",onSuccess,onError,onStatus)]);
+exercises.push(['Dance a Dance',new Media(""+mediaURL+"sounds/ex8.mp3",onSuccess,onError,onStatus)]);
+exercises.push(['Go Home',new Media(""+mediaURL+"sounds/ex9.mp3",onSuccess,onError,onStatus)]);
 
 //exercises.push(new Media('drill1',''+mediaURL+'sounds/ex0.mp3',onSuccess, onError, onStatus));
 //exercises.push(new Media('drill2',''+mediaURL+'sounds/ex1.mp3',onSuccess, onError, onStatus));
@@ -97,7 +97,6 @@ document.location.href="#page0";
 //hit specific exercise
 $(document).on('click', '.ex_choice a', function () {
 pick=$(this).attr("id");
-$("#ex_display").append(exercises[pick][0]);
 prep_tabata(pick);
 });
 
@@ -108,12 +107,15 @@ prep_tabata(pick);
 });
 
 function prep_tabata(pick){
+$("#ex_display").empty();	
+$("#ex_display").append(exercises[pick][0]);
 //check if it is running. If yes, stop everything and clear display containers and continue from start
 if(running==true){
 ct=0;
 z=0;
 abortTimer();
 
+$('#ex_display').empty();
 $('#rd_counter').empty();
 $('#countdown').empty();
 $('.pulse').empty();
@@ -220,7 +222,7 @@ $('#countdown').empty();
 				$('#container').css("display", "none");
 				ct=0;
 				z=0;
-				//document.location.href="#page0";
+				setTimeout(function(){ document.location.href="#page0"; }, 3000);
 				running=false;
 			  }
 		  }
