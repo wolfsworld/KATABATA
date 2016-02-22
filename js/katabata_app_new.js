@@ -1,5 +1,5 @@
-//document.addEventListener("deviceready", onDeviceReady, false);
-/*function onDeviceReady() {
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
 
 function checkplatform(){
 if(device.platform.toLowerCase() === "android"){
@@ -8,7 +8,7 @@ if(device.platform.toLowerCase() === "android"){
 }
 
 var mediaURL=checkplatform();
-*/
+
 $(document).ready(function(){
 
 $('.pulse').css({"display":"none"});
@@ -36,16 +36,7 @@ exercises.push(new Media(""+mediaURL+"sounds/ex8.mp3",onSuccess, onError, onStat
 exercises.push(new Media(""+mediaURL+"sounds/ex9.mp3",onSuccess, onError, onStatus));
 exercises.push(new Media(""+mediaURL+"sounds/ex10.mp3",onSuccess, onError, onStatus));
 
-/*exercises.push('a');
-exercises.push('b');
-exercises.push('c');
-exercises.push('d');
-exercises.push('e');
-exercises.push('f');
-exercises.push('g');
-exercises.push('h');
-exercises.push('i');
-*/
+
 
 function onSuccess(){}
 function onError(error){}
@@ -59,7 +50,7 @@ var num_exercises=exercises.length;
 alert(num_exercises);
 var ex_list='';
 for(i=0; i<num_exercises; i++){
-ex_list+='<li><a href="#" data-transition="turn" id="exer1_btn" class="ui-btn ui-icon-heart ui-btn-icon-left">'+exercises[i]+'</a></li>';
+ex_list+='<li><a href="#" data-transition="turn" id="exer1_btn" class="ui-btn ui-icon-heart ui-btn-icon-left">hello</a></li>';
 }
 $('#ex_listview').append(ex_list);
 
@@ -220,6 +211,6 @@ clearInterval(tid);
 }
 
 });//document ready
-//}
+}
 
 
