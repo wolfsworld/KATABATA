@@ -126,7 +126,7 @@ function movetogo(){
 }
 
 function go_ex(g){
-	$('#countdown').css({"background-image":"url(img/red_btn_30.png)"});
+	$('#countdown').css({"background-image":"url(img/red_btn_30.png)","display":"block"});
 	$('.pulse').css({"background-color": "red"});
 	sounds[0].play();//play GO
 		countdown1('g');
@@ -135,7 +135,7 @@ function go_ex(g){
 function rest_ex(r){
 	sounds[1].play();//play REST
 	$('.pulse').css({"background-color": "blue"});
-	$('#countdown').css({"background-image":"url(img/btn_bg_green80.png)"});
+	$('#countdown').css({"background-image":"url(img/btn_bg_green80.png)","display":"block"});
 		countdown1('r');
 }
 
