@@ -24,17 +24,40 @@ sounds.push(new Media(""+mediaURL+"sounds/whip.mp3"));
 sounds.push(new Media(""+mediaURL+"sounds/heartbeat.mp3"));
 sounds.push(new Media(""+mediaURL+"sounds/applause.mp3"));
 
+
+var exercise_0=new Media(""+mediaURL+"sounds/ex0.mp3",onSuccess, onError, onStatus);
 exercises.push(new Media(""+mediaURL+"sounds/ex0.mp3",onSuccess, onError, onStatus));
+
+var exercise_1=new Media(""+mediaURL+"sounds/ex1.mp3",onSuccess, onError, onStatus);
 exercises.push(new Media(""+mediaURL+"sounds/ex1.mp3",onSuccess, onError, onStatus));
+
+var exercise_2=new Media(""+mediaURL+"sounds/ex2.mp3",onSuccess, onError, onStatus);
 exercises.push(new Media(""+mediaURL+"sounds/ex2.mp3",onSuccess, onError, onStatus));
+
+var exercise_3=new Media(""+mediaURL+"sounds/ex3.mp3",onSuccess, onError, onStatus);
 exercises.push(new Media(""+mediaURL+"sounds/ex3.mp3",onSuccess, onError, onStatus));
+
+var exercise_4=new Media(""+mediaURL+"sounds/ex4.mp3",onSuccess, onError, onStatus);
 exercises.push(new Media(""+mediaURL+"sounds/ex4.mp3",onSuccess, onError, onStatus));
+
+var exercise_5=new Media(""+mediaURL+"sounds/ex5.mp3",onSuccess, onError, onStatus);
 exercises.push(new Media(""+mediaURL+"sounds/ex5.mp3",onSuccess, onError, onStatus));
+
+var exercise_6=new Media(""+mediaURL+"sounds/ex6.mp3",onSuccess, onError, onStatus);
 exercises.push(new Media(""+mediaURL+"sounds/ex6.mp3",onSuccess, onError, onStatus));
+
+var exercise_7=new Media(""+mediaURL+"sounds/ex7.mp3",onSuccess, onError, onStatus);
 exercises.push(new Media(""+mediaURL+"sounds/ex7.mp3",onSuccess, onError, onStatus));
+
+var exercise_8=new Media(""+mediaURL+"sounds/ex8.mp3",onSuccess, onError, onStatus);
 exercises.push(new Media(""+mediaURL+"sounds/ex8.mp3",onSuccess, onError, onStatus));
+
+var exercise_9=new Media(""+mediaURL+"sounds/ex9.mp3",onSuccess, onError, onStatus);
 exercises.push(new Media(""+mediaURL+"sounds/ex9.mp3",onSuccess, onError, onStatus));
+
+var exercise_10=new Media(""+mediaURL+"sounds/ex10.mp3",onSuccess, onError, onStatus);
 exercises.push(new Media(""+mediaURL+"sounds/ex10.mp3",onSuccess, onError, onStatus));
+
 
 
 
@@ -47,10 +70,9 @@ if( status==Media.MEDIA_STOPPED ) {
 
 
 var num_exercises=exercises.length;
-alert(num_exercises);
 var ex_list='';
 for(i=0; i<num_exercises; i++){
-ex_list+='<li><a href="#" data-transition="turn" id="exer1_btn" class="ui-btn ui-icon-heart ui-btn-icon-left">hello</a></li>';
+ex_list+='<li><a href="#" data-transition="turn" id="exer1_btn" class="ui-btn ui-icon-heart ui-btn-icon-left">'+exercises[i]+'</a></li>';
 }
 $('#ex_listview').append(ex_list);
 
