@@ -45,9 +45,9 @@ sounds.push(new Media(""+mediaURL+"sounds/whip.mp3"));
 sounds.push(new Media(""+mediaURL+"sounds/heartbeat.mp3"));
 sounds.push(new Media(""+mediaURL+"sounds/applause.mp3"));
 
-exercises.push(['Push-ups',new Media(""+mediaURL+"sounds/ex0.mp3",onSuccess,onError,onStatus)]);
-exercises.push(['Burpees',new Media(""+mediaURL+"sounds/ex1.mp3",onSuccess,onError,onStatus)]);
-exercises.push(['Sit-ups',new Media(""+mediaURL+"sounds/ex2.mp3",onSuccess,onError,onStatus)]);
+exercises.push(['Sit-ups',new Media(""+mediaURL+"sounds/ex0.mp3",onSuccess,onError,onStatus)]);
+exercises.push(['Push-ups',new Media(""+mediaURL+"sounds/ex1.mp3",onSuccess,onError,onStatus)]);
+exercises.push(['Burpees',new Media(""+mediaURL+"sounds/ex2.mp3",onSuccess,onError,onStatus)]);
 exercises.push(['Squats',new Media(""+mediaURL+"sounds/ex3.mp3",onSuccess,onError,onStatus)]);
 exercises.push(['Sprints',new Media(""+mediaURL+"sounds/ex4.mp3",onSuccess,onError,onStatus)]);
 exercises.push(['Rope-Jumps',new Media(""+mediaURL+"sounds/ex5.mp3",onSuccess,onError,onStatus)]);
@@ -180,7 +180,7 @@ function go_ex(g){
 }
 
 function rest_ex(r){
-	var the_rest_pick=Math.floor((Math.random() * the_rest_lgth) + 0);
+	var the_rests_pick=Math.floor((Math.random() * the_rest_lgth) + 0);
 	v=r;
 	the_rests[the_rests_pick].play();
 	//sounds[1].play();//play REST
