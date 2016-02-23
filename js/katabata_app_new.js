@@ -102,12 +102,14 @@ document.location.href="#page0";
 //hit specific exercise
 $(document).on('click', '.ex_choice a', function () {
 pick=$(this).attr("id");
+$('#display').css({"background-image": "url(img/katabg.png"});
 $("#ex_display").empty();	
 $("#ex_display").append(exercises[pick][0]);
 });
 
 //hit Random Button
 $('#rand_kata_btn').on('click', function (){
+$('#display').css({"background-image": "url(img/katabg.png"});
 var lgth=exercises.length-1;
 //pick random number
 pick=Math.floor((Math.random() * lgth) + 0);
@@ -158,21 +160,21 @@ function movetogo(){
 }
 
 function go_ex(g){
+	v=g;
 	sounds[0].play();//play GO
 	$('#display').css({"background-image": "url(img/katabg.png"});
 	$('#countdown').css({"background-image":"url(img/red_btn_30.png)","color":"#F8E8FF","display":"block"});
 	$('.pulse').css({"background-color": "red","color":"white"});
-		v='g';
-		countdown1(v);
+	countdown1(v);
 }
 
 function rest_ex(r){
+	v=r;
 	sounds[1].play();//play REST
 	$('#display').css({"background-image": "url(img/katabg_green.png"});
 	$('.pulse').css({"background-color": "#c1ffb0","color":"green"});
 	$('#countdown').css({"background-image":"url(img/btn_bg_lightgreen80.png)","color":"green","display":"block"});
-		v='r';
-		countdown1(v);
+	countdown1(v);
 }
 
 function countdown1(v){
