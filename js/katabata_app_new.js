@@ -61,8 +61,8 @@ var z=0;
 var d=0;
 var dt=0;
 var rd=0;
-var g=0;
-var r=0;
+var g;
+var r;
 var tid;
 var running=false;
 abortTimer();
@@ -71,13 +71,13 @@ abortTimer();
 //stop button to clear all intervalls and containers
 $('#stop_btn').on('click', function (){
 abortTimer();
-var ct=0;
-var z=0;
-var d=0;
-var dt=0;
-var rd=0;
-var g=0;
-var r=0;
+ct=0;
+z=0;
+d=0;
+dt=0;
+rd=0;
+g='';
+r='';
 
 for(var i=0; i<sounds.length; i++){
 sounds[i].stop();
@@ -143,6 +143,8 @@ exercise(exc);
 
 
 function exercise(exc){
+g='g';
+r='r';
 running=true;
 $('#rd_counter').append('Round #1 of 8');
 var ex_sound=exercises[exc][1];
