@@ -109,7 +109,7 @@ $("#ex_display").empty();
 $("#ex_display").append(exercises[pick][0]);
 $('#countdown').css({"background-image":"url(img/red_btn_30.png)"});
 });
-
+// hit the START BUTTON
 $(document).on('click', '#start_btn', function () {
 prep_tabata(pick);
 });
@@ -122,7 +122,7 @@ ct=0;
 z=0;
 abortTimer();
 
-$('#ex_display').empty();
+//$('#ex_display').empty();
 $('#rd_counter').empty();
 $('#countdown').empty();
 $('.pulse').empty();
