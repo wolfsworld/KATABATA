@@ -61,8 +61,9 @@ var z=0;
 var d=0;
 var dt=0;
 var rd=0;
-var g;
-var r;
+var v;
+//var g;
+//var r;
 var tid;
 var running=false;
 abortTimer();
@@ -76,8 +77,9 @@ z=0;
 d=0;
 dt=0;
 rd=0;
-g='';
-r='';
+v='a';
+//g='';
+//r='';
 
 for(var i=0; i<sounds.length; i++){
 sounds[i].stop();
@@ -172,7 +174,7 @@ function rest_ex(r){
 }
 
 function countdown1(v){
-	var v=v; //GO or REST indicator
+	//v=v; //GO or REST indicator
 	z=0; //counter reset
 	if(v=='g'){
 	d=10;//length counts on go
