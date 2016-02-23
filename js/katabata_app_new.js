@@ -61,6 +61,8 @@ var z=0;
 var d=0;
 var dt=0;
 var rd=0;
+var g=0;
+var r=0;
 var tid;
 var running=false;
 abortTimer();
@@ -68,12 +70,14 @@ abortTimer();
 
 //stop button to clear all intervalls and containers
 $('#stop_btn').on('click', function (){
+abortTimer();
 var ct=0;
 var z=0;
 var d=0;
 var dt=0;
 var rd=0;
-abortTimer();;
+var g=0;
+var r=0;
 
 for(var i=0; i<sounds.length; i++){
 sounds[i].stop();
@@ -184,9 +188,14 @@ $('.pulse').css({"display":"block"});
 	  if(v=='g'){
 	  // sounds[2].play(); - the whip sound is muted
 	  abort(z,d);
-	  } else{
+	  } 
+	  else if(v=='r'){
 		  sounds[3].play();
 		  abort(z,d);
+	  }
+	  else{
+		 return false;
+	  }
 }//end function countdown
 				  
 function abort(z,d){
@@ -230,7 +239,7 @@ $('#countdown').empty();
 				setTimeout(function(){ document.location.href="#page0"; }, 5000);
 				running=false;
 			  }
-		  }
+		  //}
 	  }//if z>duration
 }//function abort
 
