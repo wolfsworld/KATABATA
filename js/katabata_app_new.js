@@ -15,7 +15,6 @@ $('.pulse').css({"display":"none"});
 
 var sounds = [];
 var exercises = [];
-
 var resource="/android_asset/www/";
 
 //create the arrays for exercises, commands and congrats
@@ -23,6 +22,22 @@ var kudos_all=["Great Job!","Wonderful!","Strong Performance!","Rock On!","Wow!!
 var kudos_lgth=kudos_all.length;
 var kudos_pick=Math.floor((Math.random() * kudos_lgth) + 0);
 var kudos=kudos_all[kudos_pick];
+
+var the_goes=[];
+the_goes.push(new Media(""+mediaURL+"sounds/go.mp3"));
+the_goes.push(new Media(""+mediaURL+"sounds/go1.mp3"));
+the_goes.push(new Media(""+mediaURL+"sounds/go2.mp3"));
+the_goes.push(new Media(""+mediaURL+"sounds/go3.mp3"));
+
+var the_goes_lgth=the_goes.length;
+
+var the_rests=[];
+the_rests.push(new Media(""+mediaURL+"sounds/rest.mp3"));
+the_rests.push(new Media(""+mediaURL+"sounds/rest1.mp3"));
+the_rests.push(new Media(""+mediaURL+"sounds/rest2.mp3"));
+the_rests.push(new Media(""+mediaURL+"sounds/rest3.mp3"));
+
+var the_rests_lgth=the_rests.length;
 
 sounds.push(new Media(""+mediaURL+"sounds/go.mp3"));
 sounds.push(new Media(""+mediaURL+"sounds/rest.mp3"));
@@ -62,8 +77,6 @@ var d=0;
 var dt=0;
 var rd=0;
 var v;
-//var g;
-//var r;
 var tid;
 var running=false;
 abortTimer();
@@ -78,8 +91,6 @@ d=0;
 dt=0;
 rd=0;
 v='a';
-//g='';
-//r='';
 
 for(var i=0; i<sounds.length; i++){
 sounds[i].stop();
@@ -147,8 +158,6 @@ exercise(exc);
 
 
 function exercise(exc){
-//g='g';
-//r='r';
 running=true;
 $('#rd_counter').append('Round #1 of 8');
 var ex_sound=exercises[exc][1];
@@ -160,8 +169,10 @@ function movetogo(){
 }
 
 function go_ex(g){
+	var the_goes_pick=Math.floor((Math.random() * the_goes_lgth) + 0);
 	v=g;
-	sounds[0].play();//play GO
+	the_goes[the_goes_pick].play();
+	//sounds[0].play();//play GO
 	$('#display').css({"background-image": "url(img/katabg.png"});
 	$('#countdown').css({"background-image":"url(img/red_btn_30.png)","color":"#F8E8FF","display":"block"});
 	$('.pulse').css({"background-color": "red","color":"white"});
@@ -169,8 +180,10 @@ function go_ex(g){
 }
 
 function rest_ex(r){
+	var the_rest_pick=Math.floor((Math.random() * the_rest_lgth) + 0);
 	v=r;
-	sounds[1].play();//play REST
+	the_rests[the_rests_pick].play();
+	//sounds[1].play();//play REST
 	$('#display').css({"background-image": "url(img/katabg_green.png"});
 	$('.pulse').css({"background-color": "#c1ffb0","color":"green"});
 	$('#countdown').css({"background-image":"url(img/btn_bg_lightgreen80.png)","color":"green","display":"block"});
@@ -245,17 +258,15 @@ $('#countdown').empty();
 				$('#container').css("display", "none");
 				ct=0;
 				z=0;
-				setTimeout(function(){ document.location.href="#page0"; }, 5000);
+				setTimeout(function(){ document.location.href="#page0";$('#rd_counter').empty(); }, 5000);
 				running=false;
 			  }
-		  //}
 	  }//if z>duration
 }//function abort
 
 
 function abortTimer() {
 clearInterval(tid);
-
 }
 
 });//document ready
