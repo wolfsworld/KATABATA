@@ -15,15 +15,14 @@ $('.pulse').css({"display":"none"});
 
 var sounds = [];
 var exercises = [];
-//var kudos = [];
 
 var resource="/android_asset/www/";
 
+//create the arrays for exercises, commands and congrats
 var kudos_all=["Great Job!","Wonderful!","Strong Performance!","Rock On!","Wow!!","Look at You!","You made it!!","Nice Workout!"];
 var kudos_lgth=kudos_all.length;
 var kudos_pick=Math.floor((Math.random() * kudos_lgth) + 0);
 var kudos=kudos_all[kudos_pick];
-
 
 sounds.push(new Media(""+mediaURL+"sounds/go.mp3"));
 sounds.push(new Media(""+mediaURL+"sounds/rest.mp3"));
@@ -42,19 +41,12 @@ exercises.push(['Sing a Song',new Media(""+mediaURL+"sounds/ex7.mp3",onSuccess,o
 exercises.push(['Dance a Jig',new Media(""+mediaURL+"sounds/ex8.mp3",onSuccess,onError,onStatus)]);
 exercises.push(['Go Home',new Media(""+mediaURL+"sounds/ex9.mp3",onSuccess,onError,onStatus)]);
 
-//exercises.push(new Media('drill1',''+mediaURL+'sounds/ex0.mp3',onSuccess, onError, onStatus));
-//exercises.push(new Media('drill2',''+mediaURL+'sounds/ex1.mp3',onSuccess, onError, onStatus));
-//exercises.push(new Media(""+mediaURL+"sounds/ex1.mp3",onSuccess, onError, onStatus));
-//exercises.push(new Media(""+mediaURL+"sounds/ex2.mp3",onSuccess, onError, onStatus));
-
 function onSuccess(){}
 function onError(error){}
 function onStatus(status){
-if( status==Media.MEDIA_STOPPED ) {
-			movetogo();
-        }else{}}
+if( status==Media.MEDIA_STOPPED ) {movetogo();}else{}}
 
-
+//create the exercise selection list
 var num_exercises=exercises.length;
 var ex_list='';
 for(i=0; i<num_exercises; i++){
@@ -62,24 +54,26 @@ ex_list+='<li class="ex_choice"><a id="'+i+'" href="#main" data-transition="turn
 }
 $('#ex_listview').append(ex_list);
 
+//GLOBAL variables to begin with
 var pick;
 var ct=0;
 var z=0;
-//var sounds=sounds;
-//var exercises=exercises;
+var d=0;
+var dt=0;
+var rd=0;
 var tid;
 var running=false;
-
-//Select random exercise
+abortTimer();
 
 
 //stop button to clear all intervalls and containers
 $('#stop_btn').on('click', function (){
-abortTimer();
-$('#rd_counter').empty();
-$('#countdown').empty();
-$('#container').css("display", "none");
-$("#ex_display").empty();
+var ct=0;
+var z=0;
+var d=0;
+var dt=0;
+var rd=0;
+abortTimer();;
 
 for(var i=0; i<sounds.length; i++){
 sounds[i].stop();
@@ -89,6 +83,12 @@ for(var i=0; i<exercises.length; i++){
 exercises[i][1].stop();
 exercises[i][1].release()
 }
+$('#rd_counter').empty();
+$('#countdown').empty();
+$('#container').css("display", "none");
+$("#ex_display").empty();
+
+$('#selection').collapsible( "collapse" );
 document.location.href="#page0";
 });
 
@@ -150,10 +150,10 @@ function movetogo(){
 }
 
 function go_ex(g){
+	sounds[0].play();//play GO
 	$('#display').css({"background-image": "url(img/katabg.png"});
 	$('#countdown').css({"background-image":"url(img/red_btn_30.png)","color":"#F8E8FF","display":"block"});
 	$('.pulse').css({"background-color": "red","color":"white"});
-	sounds[0].play();//play GO
 		countdown1('g');
 }
 
@@ -166,34 +166,30 @@ function rest_ex(r){
 }
 
 function countdown1(v){
-	var v=v;
-	var z=0;
+	var v=v; //GO or REST indicator
+	z=0; //counter reset
 	if(v=='g'){
-	var d=10;//counts on go
+	d=10;//length counts on go
 	}else{
-	var d=5;//counts on rest
+	d=5;//length counts on rest
 	}
 	tid = setInterval(function(){countdown(v,z++,d);}, 1000);
 }
 
 function countdown(v,z,d){
-	//alert('this is v'+v+' this is z'+z+' this is d'+d+'');
-	//alert(z);
 $('#container').css("display", "block");
 $('.pulse').empty();
 $('.pulse').css({"display":"block"});
-//$('#container').toggle('slow');
+//check if GO or REST
 	  if(v=='g'){
-	 // sounds[2].play();
+	  // sounds[2].play(); - the whip sound is muted
 	  abort(z,d);
 	  } else{
 		  sounds[3].play();
 		  abort(z,d);
-}//function countdown
+}//end function countdown
 				  
 function abort(z,d){
-	//alert('this is abort');
-	//alert('this is z'+z+' this is d'+d+'');			
 $('#countdown').empty();
 		if(v=='g'){
 		$('#countdown').append('Keep going for '+(d-z)+' seconds');
