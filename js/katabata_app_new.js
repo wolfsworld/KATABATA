@@ -180,7 +180,7 @@ function go_ex(g){
 }
 
 function rest_ex(r){
-	var the_rests_pick=Math.floor((Math.random() * the_rest_lgth) + 0);
+	var the_rests_pick=Math.floor((Math.random() * the_rests_lgth) + 0);
 	v=r;
 	the_rests[the_rests_pick].play();
 	//sounds[1].play();//play REST
