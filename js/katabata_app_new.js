@@ -145,8 +145,8 @@ exercise(exc);
 
 
 function exercise(exc){
-g='g';
-r='r';
+//g='g';
+//r='r';
 running=true;
 $('#rd_counter').append('Round #1 of 8');
 var ex_sound=exercises[exc][1];
@@ -162,7 +162,8 @@ function go_ex(g){
 	$('#display').css({"background-image": "url(img/katabg.png"});
 	$('#countdown').css({"background-image":"url(img/red_btn_30.png)","color":"#F8E8FF","display":"block"});
 	$('.pulse').css({"background-color": "red","color":"white"});
-		countdown1('g');
+		v='g';
+		countdown1(v);
 }
 
 function rest_ex(r){
@@ -170,11 +171,11 @@ function rest_ex(r){
 	$('#display').css({"background-image": "url(img/katabg_green.png"});
 	$('.pulse').css({"background-color": "#c1ffb0","color":"green"});
 	$('#countdown').css({"background-image":"url(img/btn_bg_lightgreen80.png)","color":"green","display":"block"});
-		countdown1('r');
+		v='r';
+		countdown1(v);
 }
 
 function countdown1(v){
-	//v=v; //GO or REST indicator
 	z=0; //counter reset
 	if(v=='g'){
 	d=10;//length counts on go
@@ -207,11 +208,13 @@ $('#countdown').empty();
 		if(v=='g'){
 		$('#countdown').append('Keep going for '+(d-z)+' seconds');
 		$('.pulse').append(d-z);
-		}else{
+		}else if(v=='r'){
 		$('#countdown').append('Relax for '+(d-z)+' seconds');
 		$('.pulse').append(d-z);
 		}
-		
+		else{
+		return false;
+		}
 		if(z>=d){
 		  $('#container').css("display", "none");
 		  abortTimer();
