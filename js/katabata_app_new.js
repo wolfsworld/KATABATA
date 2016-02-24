@@ -45,11 +45,11 @@ sounds.push(new Media(""+mediaURL+"sounds/whip.mp3"));
 sounds.push(new Media(""+mediaURL+"sounds/heartbeat.mp3"));
 sounds.push(new Media(""+mediaURL+"sounds/applause.mp3"));
 
-exercises.push(['Sit-ups',new Media(""+mediaURL+"sounds/ex0.mp3",onSuccess,onError,onStatus)]);
-exercises.push(['Push-ups',new Media(""+mediaURL+"sounds/ex1.mp3",onSuccess,onError,onStatus)]);
-exercises.push(['Burpees',new Media(""+mediaURL+"sounds/ex2.mp3",onSuccess,onError,onStatus)]);
-exercises.push(['Squats',new Media(""+mediaURL+"sounds/ex3.mp3",onSuccess,onError,onStatus)]);
-exercises.push(['Sprints',new Media(""+mediaURL+"sounds/ex4.mp3",onSuccess,onError,onStatus)]);
+exercises.push(['Do Sit-ups',new Media(""+mediaURL+"sounds/ex0.mp3",onSuccess,onError,onStatus)]);
+exercises.push(['Do Push-ups',new Media(""+mediaURL+"sounds/ex1.mp3",onSuccess,onError,onStatus)]);
+exercises.push(['Do Burpees',new Media(""+mediaURL+"sounds/ex2.mp3",onSuccess,onError,onStatus)]);
+exercises.push(['Do Squats',new Media(""+mediaURL+"sounds/ex3.mp3",onSuccess,onError,onStatus)]);
+exercises.push(['Lift Weights',new Media(""+mediaURL+"sounds/ex4.mp3",onSuccess,onError,onStatus)]);
 exercises.push(['Rope-Jumps',new Media(""+mediaURL+"sounds/ex5.mp3",onSuccess,onError,onStatus)]);
 exercises.push(['Drink a beer',new Media(""+mediaURL+"sounds/ex6.mp3",onSuccess,onError,onStatus)]);
 exercises.push(['Sing a Song',new Media(""+mediaURL+"sounds/ex7.mp3",onSuccess,onError,onStatus)]);
@@ -154,6 +154,7 @@ else{
 var exc=pick;
 exercise(exc);
 }
+
 }//end function prep_tabata
 
 
