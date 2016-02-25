@@ -114,7 +114,7 @@ $('#container').css("display", "none");
 $("#ex_display").empty();
 
 $('#selection').collapsible( "collapse" );
-document.location.href="#page0";
+//document.location.href="#page0";
 });
 
 //start exercise
