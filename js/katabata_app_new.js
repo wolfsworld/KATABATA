@@ -93,21 +93,22 @@ rd=0;
 v='a';
 
 for(var i=0; i<the_goes_lgth; i++){
-the_goes[i].stop();
+//the_goes[i].stop();
 the_goes[i].release();
 }
 for(var i=0; i<the_rests_lgth; i++){
-the_rests[i].stop();
+//the_rests[i].stop();
 the_rests[i].release();
 }
 for(var i=0; i<sounds.length; i++){
-sounds[i].stop();
+//sounds[i].stop();
 sounds[i].release();
 }
 for(var i=0; i<exercises.length; i++){
-exercises[i][1].stop();
+//exercises[i][1].stop();
 exercises[i][1].release()
 }
+
 $('#rd_counter').empty();
 $('#countdown').empty();
 $('#container').css("display", "none");
