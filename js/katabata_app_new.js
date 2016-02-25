@@ -81,7 +81,6 @@ var tid;
 var running=false;
 abortTimer();
 
-
 //stop button to clear all intervalls and containers
 $('#stop_btn').on('click', function (){
 abortTimer();
@@ -126,7 +125,6 @@ $('#display').css({"background-image": "url(img/katabg.png"});
 $("#ex_display").empty();	
 $("#ex_display").append(exercises[pick][0]);
 });
-
 //hit Random Button
 $('#rand_kata_btn').on('click', function (){
 $('#display').css({"background-image": "url(img/katabg.png"});
@@ -141,7 +139,6 @@ $('#countdown').css({"background-image":"url(img/red_btn_30.png)"});
 $(document).on('click', '#start_btn', function () {
 prep_tabata(pick);
 });
-
 
 function prep_tabata(pick){
 //check if it is running. If yes, stop everything and clear display containers and continue from start
@@ -163,9 +160,7 @@ else{
 var exc=pick;
 exercise(exc);
 }
-
 }//end function prep_tabata
-
 
 function exercise(exc){
 running=true;
@@ -273,7 +268,6 @@ $('#countdown').empty();
 			  }
 	  }//if z>duration
 }//function abort
-
 
 function abortTimer() {
 clearInterval(tid);
