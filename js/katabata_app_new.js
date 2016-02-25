@@ -50,11 +50,7 @@ exercises.push(['Do Push-ups',new Media(""+mediaURL+"sounds/ex1.mp3",onSuccess,o
 exercises.push(['Do Burpees',new Media(""+mediaURL+"sounds/ex2.mp3",onSuccess,onError,onStatus)]);
 exercises.push(['Do Squats',new Media(""+mediaURL+"sounds/ex3.mp3",onSuccess,onError,onStatus)]);
 exercises.push(['Lift Weights',new Media(""+mediaURL+"sounds/ex4.mp3",onSuccess,onError,onStatus)]);
-exercises.push(['Rope-Jumps',new Media(""+mediaURL+"sounds/ex5.mp3",onSuccess,onError,onStatus)]);
-exercises.push(['Drink a beer',new Media(""+mediaURL+"sounds/ex6.mp3",onSuccess,onError,onStatus)]);
-exercises.push(['Sing a Song',new Media(""+mediaURL+"sounds/ex7.mp3",onSuccess,onError,onStatus)]);
-exercises.push(['Dance a Jig',new Media(""+mediaURL+"sounds/ex8.mp3",onSuccess,onError,onStatus)]);
-exercises.push(['Go Home',new Media(""+mediaURL+"sounds/ex9.mp3",onSuccess,onError,onStatus)]);
+
 
 function onSuccess(){}
 function onError(error){}
