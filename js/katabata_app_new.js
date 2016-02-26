@@ -11,6 +11,12 @@ var mediaURL=checkplatform();
 
 $(document).ready(function(){
 
+$(document).on("collapsibleexpand", "[data-role=collapsible]", function () {
+    var position = $(this).offset().top;
+    $.mobile.silentScroll(position);
+});
+
+
 $('.pulse').css({"display":"none"});
 var resource="/android_asset/www/";
 
@@ -159,7 +165,7 @@ exercise(exc);
 
 function exercise(exc){
 running=true;
-$('#rd_counter').transition({opacity:1},1000,'in');
+$('#rd_counter').transition({opacity:1},2000);
 $('#rd_counter').append('Round #1 of 8');
 var ex_sound=exercises[exc][1];
 ex_sound.play();
@@ -167,7 +173,7 @@ ex_sound.play();
 
 function movetogo(){
 //$('#countdown').css({"opacity":"1", "background-image":"url(img/red_btn_30.png)"});
-$('#stop_btn').transition({opacity:1},1000,'in');
+$('#stop_btn').transition({opacity:1},1000);
 	go_ex('g');
 }
 
@@ -246,7 +252,7 @@ $('#countdown').empty();
 		  rd=ct/2;
 			  //toggle
 			  if(ct<16){
-				  $('#countdown').transition({opacity:0},500,'out');
+				  $('#countdown').transition({opacity:0},700);
 				  if(v=='g'){rest_ex('r');} else{go_ex('g');}
 				  //visual
 				  if ((parseFloat(rd) == parseInt(rd)) && !isNaN(rd)) {
@@ -266,7 +272,7 @@ $('#countdown').empty();
 				$('#container').css("display", "none");
 				ct=0;
 				z=0;
-				setTimeout(function(){ document.location.href="#page0";$('#rd_counter').empty(); }, 5000);
+				setTimeout(function(){ document.location.href="#page0";$('#rd_counter').empty(); }, 3000);
 				running=false;
 			  }
 	  }//if z>duration
