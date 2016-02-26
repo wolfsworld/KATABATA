@@ -164,6 +164,7 @@ exercise(exc);
 }//end function prep_tabata
 
 function exercise(exc){
+	$('#stop_btn').transition({opacity:1},1000);
 running=true;
 var ex_sound=exercises[exc][1];
 ex_sound.play();
