@@ -59,6 +59,8 @@ navigator.splashscreen.hide();
 	text-align: center;
 	width: 100%;
 	position: absolute;
+	-webkit-transition: display 4s; /* For Safari 3.1 to 6.0 */
+    transition: display 4s;
 }
 #countdown{
 	display: none;
@@ -73,8 +75,8 @@ navigator.splashscreen.hide();
 	font-family: "Droid Sans", Arial, Helvetica, sans-serif;
 	position: absolute;
 	z-index: 100;
-	-webkit-transition: background-color 2s, color 4s; /* For Safari 3.1 to 6.0 */
-    transition: background-color 2s, color 4s;
+	-webkit-transition: display 4s, color 4s; /* For Safari 3.1 to 6.0 */
+    transition: display 4s, color 4s;
 }
 
 #container {
