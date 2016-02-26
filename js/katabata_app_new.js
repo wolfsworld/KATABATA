@@ -178,7 +178,6 @@ $('#stop_btn').transition({opacity:1},1000);
 }
 
 function go_ex(g){
-	//$('#countdown').css({"opacity":"0"});
 	var the_goes_pick=Math.floor((Math.random() * the_goes_lgth) + 0);
 	v=g;
 	the_goes[the_goes_pick].play();
@@ -191,7 +190,6 @@ function go_ex(g){
 }
 
 function rest_ex(r){
-	//$('#countdown').css({"opacity":"0"});
 	var the_rests_pick=Math.floor((Math.random() * the_rests_lgth) + 0);
 	v=r;
 	the_rests[the_rests_pick].play();
