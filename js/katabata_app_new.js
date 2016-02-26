@@ -108,7 +108,8 @@ $('#rd_counter').empty();
 $('#countdown').empty();
 $('#container').css("display", "none");
 $("#ex_display").empty();
-
+$('#countdown').css({"display":"none", "background-image":"url(img/red_btn_30.png)"});
+$('#stop_btn').css({"display":"none"});
 $('#selection').collapsible( "collapse" );
 //document.location.href="#page0";
 });
@@ -129,7 +130,6 @@ var lgth=exercises.length-1;
 pick=Math.floor((Math.random() * lgth) + 0);
 $("#ex_display").empty();	
 $("#ex_display").append(exercises[pick][0]);
-$('#countdown').css({"background-image":"url(img/red_btn_30.png)"});
 });
 // hit the START BUTTON
 $(document).on('click', '#start_btn', function () {
@@ -160,6 +160,8 @@ exercise(exc);
 
 function exercise(exc){
 running=true;
+$('#countdown').css({"display":"block", "background-image":"url(img/red_btn_30.png)"});
+$('#stop_btn').css({"display":"block"});
 $('#rd_counter').append('Round #1 of 8');
 var ex_sound=exercises[exc][1];
 ex_sound.play();
