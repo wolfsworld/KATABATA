@@ -118,13 +118,13 @@ $('#selection').collapsible( "collapse" );
 //hit specific exercise
 $(document).on('click', '.ex_choice a', function () {
 pick=$(this).attr("id");
-$('#display').css({"background-image": "url(img/katabg.png"});
+//$('#display').css({"background-image": "url(img/katabg.png"});
 $("#ex_display").empty();	
 $("#ex_display").append(exercises[pick][0]);
 });
 //hit Random Button
 $('#rand_kata_btn').on('click', function (){
-$('#display').css({"background-image": "url(img/katabg.png"});
+//$('#display').css({"background-image": "url(img/katabg.png"});
 var lgth=exercises.length-1;
 //pick random number
 pick=Math.floor((Math.random() * lgth) + 0);
@@ -176,7 +176,7 @@ function go_ex(g){
 	v=g;
 	the_goes[the_goes_pick].play();
 	//sounds[0].play();//play GO
-	$('#display').css({"background-image": "url(img/katabg_green.png"});
+	$('#display').css({"background-image": "url(img/katabg.png"});
 	$('#countdown').css({"background-image":"url(img/red_btn_30.png)","color":"#F8E8FF","display":"block"});
 	$('.pulse').css({"background-color": "red","color":"white"});
 	countdown1(v);
