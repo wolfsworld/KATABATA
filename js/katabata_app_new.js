@@ -252,7 +252,7 @@ $('#countdown').empty();
 		  rd=ct/2;
 			  //toggle
 			  if(ct<16){
-				  $('#countdown').transition({opacity:0},700);
+				  //$('#countdown').transition({opacity:0},700);
 				  if(v=='g'){rest_ex('r');} else{go_ex('g');}
 				  //visual
 				  if ((parseFloat(rd) == parseInt(rd)) && !isNaN(rd)) {
