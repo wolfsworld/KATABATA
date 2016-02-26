@@ -167,7 +167,7 @@ function exercise(exc){
 running=true;
 var ex_sound=exercises[exc][1];
 ex_sound.play();
-$('#rd_counter').transition({opacity:1},2000);
+$('#rd_counter').transition({opacity:1},2500);
 $('#rd_counter').append('Round #1 of 8');
 }
 
@@ -185,7 +185,7 @@ function go_ex(g){
 	//sounds[0].play();//play GO
 	$('#display').css({"background-image": "url(img/katabg.png)","background-position": "center 50px"});
 	$('#countdown').transition({opacity:1},1000,'in');
-	$('#countdown').css({"background-image":"url(img/red_btn_30.png)","color":"#F8E8FF","display":"block"});
+	$('#countdown').css({"background-image":"url(img/red_btn_30.png)","color":"#F8E8FF"});
 	$('.pulse').css({"background-color": "red","color":"white"});
 	countdown1(v);
 }
@@ -199,7 +199,7 @@ function rest_ex(r){
 	$('#display').css({"background-image":"url(img/katabg_green.png)","background-position":"center 50px"});
 	$('.pulse').css({"background-color": "#c1ffb0","color":"green"});
 	$('#countdown').transition({opacity:1},1000,'in');
-	$('#countdown').css({"background-image":"url(img/btn_bg_lightgreen80.png)","color":"green","display":"block"});
+	$('#countdown').css({"background-image":"url(img/btn_bg_lightgreen80.png)","color":"green"});
 	countdown1(v);
 }
 
