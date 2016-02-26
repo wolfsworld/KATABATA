@@ -165,13 +165,13 @@ ex_sound.play();
 }
 
 function movetogo(){
-$('#countdown').css({"opacity":"1", "background-image":"url(img/red_btn_30.png)"});
+//$('#countdown').css({"opacity":"1", "background-image":"url(img/red_btn_30.png)"});
 $('#stop_btn').css({"display":"block"});
 	go_ex('g');
 }
 
 function go_ex(g){
-	$('#countdown').css({"opacity":"0"});
+	//$('#countdown').css({"opacity":"0"});
 	var the_goes_pick=Math.floor((Math.random() * the_goes_lgth) + 0);
 	v=g;
 	the_goes[the_goes_pick].play();
@@ -183,7 +183,7 @@ function go_ex(g){
 }
 
 function rest_ex(r){
-	$('#countdown').css({"opacity":"0"});
+	//$('#countdown').css({"opacity":"0"});
 	var the_rests_pick=Math.floor((Math.random() * the_rests_lgth) + 0);
 	v=r;
 	the_rests[the_rests_pick].play();
@@ -243,6 +243,7 @@ $('#countdown').empty();
 		  rd=ct/2;
 			  //toggle
 			  if(ct<16){
+				  $('#countdown').css({"opacity":"0"});
 				  if(v=='g'){rest_ex('r');} else{go_ex('g');}
 				  //visual
 				  if ((parseFloat(rd) == parseInt(rd)) && !isNaN(rd)) {
