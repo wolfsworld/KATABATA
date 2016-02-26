@@ -114,7 +114,7 @@ $('#countdown').empty();
 $('#container').css("display", "none");
 $("#ex_display").empty();
 $('#countdown').css({"opacity":"0", "background-image":"url(img/red_btn_30.png)"});
-$('#stop_btn').css({"display":"none"});
+$('#stop_btn').css({"opacity":"0"});
 $('#selection').collapsible( "collapse" );
 //document.location.href="#page0";
 });
@@ -164,7 +164,6 @@ exercise(exc);
 }//end function prep_tabata
 
 function exercise(exc){
-	$('#stop_btn').transition({opacity:1},1000);
 running=true;
 var ex_sound=exercises[exc][1];
 ex_sound.play();
