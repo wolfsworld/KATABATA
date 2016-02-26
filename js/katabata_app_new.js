@@ -11,8 +11,6 @@ var mediaURL=checkplatform();
 
 $(document).ready(function(){
 
-$('#display').css({"background-image": "url(img/katabg_green.png","background-position": "center 50px"});
-
 $('.pulse').css({"display":"none"});
 
 var sounds = [];
@@ -178,7 +176,7 @@ function go_ex(g){
 	v=g;
 	the_goes[the_goes_pick].play();
 	//sounds[0].play();//play GO
-	$('#display').css({"background-image": "url(img/katabg_green.png","background-position": "center 50px"});
+	$('#display').css({"background-image": "url(img/katabg.png)","background-position": "center 50px"});
 	$('#countdown').css({"background-image":"url(img/red_btn_30.png)","color":"#F8E8FF","display":"block"});
 	$('.pulse').css({"background-color": "red","color":"white"});
 	countdown1(v);
@@ -189,7 +187,7 @@ function rest_ex(r){
 	v=r;
 	the_rests[the_rests_pick].play();
 	//sounds[1].play();//play REST
-	$('#display').css({"background-image":"url(img/katabg_green.png","background-position":"center 50px"});
+	$('#display').css({"background-image":"url(img/katabg_green.png)","background-position":"center 50px"});
 	$('.pulse').css({"background-color": "#c1ffb0","color":"green"});
 	$('#countdown').css({"background-image":"url(img/btn_bg_lightgreen80.png)","color":"green","display":"block"});
 	countdown1(v);
