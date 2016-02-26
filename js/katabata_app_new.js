@@ -12,7 +12,7 @@ var mediaURL=checkplatform();
 $(document).ready(function(){
 
 $(document).on("collapsibleexpand", "[data-role=collapsible]", function () {
-    var position = $(this).offset().top;
+    var position = $(this).offset().bottom;
     $.mobile.silentScroll(position);
 });
 
@@ -165,10 +165,10 @@ exercise(exc);
 
 function exercise(exc){
 running=true;
-$('#rd_counter').transition({opacity:1},2000);
-$('#rd_counter').append('Round #1 of 8');
 var ex_sound=exercises[exc][1];
 ex_sound.play();
+$('#rd_counter').transition({opacity:1},2000);
+$('#rd_counter').append('Round #1 of 8');
 }
 
 function movetogo(){
