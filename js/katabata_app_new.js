@@ -176,7 +176,7 @@ function go_ex(g){
 	v=g;
 	the_goes[the_goes_pick].play();
 	//sounds[0].play();//play GO
-	$('#display').css({"background-image": "url(img/katabg.png"});
+	$('#display').css({"background-image": "url(img/katabg_green.png"});
 	$('#countdown').css({"background-image":"url(img/red_btn_30.png)","color":"#F8E8FF","display":"block"});
 	$('.pulse').css({"background-color": "red","color":"white"});
 	countdown1(v);
