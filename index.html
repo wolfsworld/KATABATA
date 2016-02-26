@@ -52,6 +52,7 @@ navigator.splashscreen.hide();
 }
 #rd_counter{
 	>display: none;
+	opacity: 1;
 	font-family: "Droid Sans", Arial, Helvetica, sans-serif;
 	font-size: 36px;
 	color: #F8E8FF;
@@ -59,11 +60,12 @@ navigator.splashscreen.hide();
 	text-align: center;
 	width: 100%;
 	position: absolute;
-	-webkit-transition: display 4s; /* For Safari 3.1 to 6.0 */
-    transition: display 4s;
+	-webkit-transition: opacity 4s; /* For Safari 3.1 to 6.0 */
+    transition: opacity 4s;
 }
 #countdown{
-	display: none;
+	opacity: 0;
+	>display: none;
 	font-size: 20px;
 	padding-top: 10px;
 	color: #F2F2FF;
@@ -75,8 +77,8 @@ navigator.splashscreen.hide();
 	font-family: "Droid Sans", Arial, Helvetica, sans-serif;
 	position: absolute;
 	z-index: 100;
-	-webkit-transition: display 4s, color 4s; /* For Safari 3.1 to 6.0 */
-    transition: display 4s, color 4s;
+	-webkit-transition: opacity 4s, color 4s; /* For Safari 3.1 to 6.0 */
+    transition: opacity 4s, color 4s;
 }
 
 #container {
