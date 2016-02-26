@@ -160,14 +160,14 @@ exercise(exc);
 
 function exercise(exc){
 running=true;
-$('#countdown').css({"display":"block", "background-image":"url(img/red_btn_30.png)"});
-$('#stop_btn').css({"display":"block"});
 $('#rd_counter').append('Round #1 of 8');
 var ex_sound=exercises[exc][1];
 ex_sound.play();
 }
 
 function movetogo(){
+$('#countdown').css({"display":"block", "background-image":"url(img/red_btn_30.png)"});
+$('#stop_btn').css({"display":"block"});
 	go_ex('g');
 }
 
