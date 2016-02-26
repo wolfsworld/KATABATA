@@ -12,12 +12,12 @@ var mediaURL=checkplatform();
 $(document).ready(function(){
 
 $('.pulse').css({"display":"none"});
-
-var sounds = [];
-var exercises = [];
 var resource="/android_asset/www/";
 
 //create the arrays for exercises, commands and congrats
+var sounds = [];
+var exercises = [];
+
 var kudos_all=["Great Job!","Wonderful!","Strong Performance!","Rock On!","Wow!!","Look at You!","You made it!!","Nice Workout!"];
 var kudos_lgth=kudos_all.length;
 var kudos_pick=Math.floor((Math.random() * kudos_lgth) + 0);
@@ -50,7 +50,6 @@ exercises.push(['Do Push-ups',new Media(""+mediaURL+"sounds/ex1.mp3",onSuccess,o
 exercises.push(['Do Burpees',new Media(""+mediaURL+"sounds/ex2.mp3",onSuccess,onError,onStatus)]);
 exercises.push(['Do Squats',new Media(""+mediaURL+"sounds/ex3.mp3",onSuccess,onError,onStatus)]);
 exercises.push(['Lift Weights',new Media(""+mediaURL+"sounds/ex4.mp3",onSuccess,onError,onStatus)]);
-
 
 function onSuccess(){}
 function onError(error){}
