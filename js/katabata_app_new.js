@@ -159,6 +159,7 @@ exercise(exc);
 
 function exercise(exc){
 running=true;
+$('#rd_counter').transition({opacity:1},1000,'in');
 $('#rd_counter').append('Round #1 of 8');
 var ex_sound=exercises[exc][1];
 ex_sound.play();
@@ -166,7 +167,7 @@ ex_sound.play();
 
 function movetogo(){
 //$('#countdown').css({"opacity":"1", "background-image":"url(img/red_btn_30.png)"});
-$('#stop_btn').css({"display":"block"});
+$('#stop_btn').transition({opacity:1},1000,'in');
 	go_ex('g');
 }
 
@@ -177,7 +178,7 @@ function go_ex(g){
 	the_goes[the_goes_pick].play();
 	//sounds[0].play();//play GO
 	$('#display').css({"background-image": "url(img/katabg.png)","background-position": "center 50px"});
-	$('#countdown').transition({opacity:1});
+	$('#countdown').transition({opacity:1},1000,'in');
 	$('#countdown').css({"background-image":"url(img/red_btn_30.png)","color":"#F8E8FF","display":"block"});
 	$('.pulse').css({"background-color": "red","color":"white"});
 	countdown1(v);
@@ -191,7 +192,7 @@ function rest_ex(r){
 	//sounds[1].play();//play REST
 	$('#display').css({"background-image":"url(img/katabg_green.png)","background-position":"center 50px"});
 	$('.pulse').css({"background-color": "#c1ffb0","color":"green"});
-	$('#countdown').transition({opacity:1});
+	$('#countdown').transition({opacity:1},1000,'in');
 	$('#countdown').css({"background-image":"url(img/btn_bg_lightgreen80.png)","color":"green","display":"block"});
 	countdown1(v);
 }
@@ -245,7 +246,7 @@ $('#countdown').empty();
 		  rd=ct/2;
 			  //toggle
 			  if(ct<16){
-				  $('#countdown').transition({opacity:0});
+				  $('#countdown').transition({opacity:0},500,'out');
 				  if(v=='g'){rest_ex('r');} else{go_ex('g');}
 				  //visual
 				  if ((parseFloat(rd) == parseInt(rd)) && !isNaN(rd)) {
