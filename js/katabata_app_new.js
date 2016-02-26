@@ -178,18 +178,20 @@ $('#stop_btn').transition({opacity:1},1000);
 }
 
 function go_ex(g){
+	$('#countdown').css({"opacity":"0","background-image":"url(img/red_btn_30.png)","color":"#F8E8FF"});
 	var the_goes_pick=Math.floor((Math.random() * the_goes_lgth) + 0);
 	v=g;
 	the_goes[the_goes_pick].play();
 	//sounds[0].play();//play GO
 	$('#display').css({"background-image": "url(img/katabg.png)","background-position": "center 50px"});
-	$('#countdown').transition({opacity:1},1000,'in');
-	$('#countdown').css({"background-image":"url(img/red_btn_30.png)","color":"#F8E8FF"});
 	$('.pulse').css({"background-color": "red","color":"white"});
+	$('#countdown').transition({opacity:1},1000,'in');
+	
 	countdown1(v);
 }
 
 function rest_ex(r){
+	$('#countdown').css({"opacity":"0","background-image":"url(img/btn_bg_lightgreen80.png)","color":"green"});
 	var the_rests_pick=Math.floor((Math.random() * the_rests_lgth) + 0);
 	v=r;
 	the_rests[the_rests_pick].play();
@@ -197,7 +199,7 @@ function rest_ex(r){
 	$('#display').css({"background-image":"url(img/katabg_green.png)","background-position":"center 50px"});
 	$('.pulse').css({"background-color": "#c1ffb0","color":"green"});
 	$('#countdown').transition({opacity:1},1000,'in');
-	$('#countdown').css({"background-image":"url(img/btn_bg_lightgreen80.png)","color":"green"});
+	
 	countdown1(v);
 }
 
