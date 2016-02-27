@@ -174,7 +174,8 @@ $('#rd_counter').append('Round #1 of 8');
 function movetogo(){
 //$('#countdown').css({"opacity":"1", "background-image":"url(img/red_btn_30.png)"});
 $('#stop_btn').transition({opacity:1},1000);
-	go_ex('g');
+	setTimeout(function(){ go_ex('g');},1000);
+	//go_ex('g');
 }
 
 function go_ex(g){
@@ -267,7 +268,7 @@ $('#countdown').empty();
 				$('#rd_counter').empty();
 				$('#rd_counter').append(kudos);
 				$('#countdown').empty();
-				$('#countdown').css({"display":"none"});
+				$('#countdown').transition({opacity:0},500);
 				$('.pulse').empty();
 				$('#container').css("display", "none");
 				ct=0;
