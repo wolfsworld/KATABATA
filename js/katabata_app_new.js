@@ -174,7 +174,7 @@ $('#rd_counter').append('Round #1 of 8');
 function movetogo(){
 //$('#countdown').css({"opacity":"1", "background-image":"url(img/red_btn_30.png)"});
 $('#stop_btn').transition({opacity:1},1000);
-	setTimeout(function(){ go_ex('g');},1000);
+	setTimeout(function(){ go_ex('g');},2000);
 	//go_ex('g');
 }
 
