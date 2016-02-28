@@ -78,6 +78,7 @@ var d=0;
 var dt=0;
 var rd=0;
 var v;
+var m=0;
 var tid;
 var running=false;
 abortTimer();
@@ -85,6 +86,8 @@ abortTimer();
 //stop button to clear all intervalls and containers
 $('#stop_btn').on('click', function (){
 abortTimer();
+clearTimeout(delay_go);
+m=1;
 ct=0;
 z=0;
 d=0;
@@ -146,6 +149,7 @@ function prep_tabata(pick){
 if(running==true){
 ct=0;
 z=0;
+m=0;
 abortTimer();
 
 //$('#ex_display').empty();
@@ -174,8 +178,13 @@ $('#rd_counter').append('Round #1 of 8');
 function movetogo(){
 //$('#countdown').css({"opacity":"1", "background-image":"url(img/red_btn_30.png)"});
 $('#stop_btn').transition({opacity:1},1000);
-	setTimeout(function(){ go_ex('g');},2000);
-	//go_ex('g');
+	delay_go=setTimeout(function(){ 
+								 if(m==0){
+								 go_ex('g');
+								 }else{
+								 return false;
+								 }
+								 },2000);
 }
 
 function go_ex(g){
