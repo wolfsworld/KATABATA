@@ -82,6 +82,7 @@ var m=0;
 var tid;
 var running=false;
 abortTimer();
+var version='0.2.3';
 
 //stop button to clear all intervalls and containers
 $('#stop_btn').on('click', function (){
@@ -119,6 +120,7 @@ $("#ex_display").empty();
 $('#countdown').css({"opacity":"0", "background-image":"url(img/red_btn_30.png)"});
 $('#stop_btn').css({"opacity":"0"});
 $('#selection').collapsible( "collapse" );
+$('#display').css({"background-image": "url(img/katabg.png)","background-position": "center 50px"});
 //document.location.href="#page0";
 });
 
