@@ -85,7 +85,7 @@ abortTimer();
 var version='0.2.3';
 
 //stop button to clear all intervalls and containers
-$('#stop_btn').on('click', function (){
+$('#stop_btn').on('click', function stopall(){
 abortTimer();
 clearTimeout(delay_go);
 m=1;
@@ -123,6 +123,12 @@ $('#selection').collapsible( "collapse" );
 $('#display').css({"background-image": "url(img/katabg.png)","background-position": "center 50px"});
 //document.location.href="#page0";
 });
+
+
+$( "#display" ).on( "swipe", function(){
+alert('swipe');
+stopall();
+									  });
 
 //start exercise
 //hit specific exercise
