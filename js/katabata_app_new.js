@@ -85,7 +85,7 @@ abortTimer();
 var version='0.2.3';
 
 //stop button to clear all intervalls and containers
-$('#stop_btn').on('click', stopall);
+$('.stop_btn').on('click', stopall);
 
 function stopall(){
 abortTimer();
@@ -120,7 +120,7 @@ $('#countdown').empty();
 $('#container').css("display", "none");
 $("#ex_display").empty();
 $('#countdown').css({"opacity":"0", "background-image":"url(img/red_btn_30.png)"});
-$('#stop_btn').css({"opacity":"0"});
+$('.stop_btn').css({"opacity":"0"});
 $('#selection').collapsible( "collapse" );
 $('#display').css({"background-image": "url(img/katabg.png)","background-position": "center 50px"});
 //document.location.href="#page0";
@@ -128,8 +128,9 @@ $('#display').css({"background-image": "url(img/katabg.png)","background-positio
 
 
 $( "#display" ).on( "swipe", function(){
-alert('swipe');
+//alert('swipe');
 stopall();
+document.location.href="#page0";
 									  });
 
 //start exercise
@@ -187,7 +188,7 @@ $('#rd_counter').append('Round #1 of 8');
 
 function movetogo(){
 //$('#countdown').css({"opacity":"1", "background-image":"url(img/red_btn_30.png)"});
-$('#stop_btn').transition({opacity:1},1000);
+$('.stop_btn').transition({opacity:1},1000);
 	delay_go=setTimeout(function(){ 
 								 if(m==0){
 								 go_ex('g');
