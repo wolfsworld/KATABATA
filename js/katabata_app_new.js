@@ -87,6 +87,7 @@ var version='0.2.3';
 //stop button to clear all intervalls and containers
 $('.stop_btn').on('click', stopall);
 
+//function to reset all running exercises
 function stopall(){
 abortTimer();
 clearTimeout(delay_go);
@@ -126,30 +127,28 @@ $('#display').css({"background-image": "url(img/katabg.png)","background-positio
 //document.location.href="#page0";
 };
 
-
+//swipe stop current exercise and return to front page
 $( "#display" ).on( "swipe", function(){
-//alert('swipe');
 stopall();
 document.location.href="#page0";
-									  });
+});
 
 //start exercise
 //hit specific exercise
 $(document).on('click', '.ex_choice a', function () {
 pick=$(this).attr("id");
-//$('#display').css({"background-image": "url(img/katabg.png"});
 $("#ex_display").empty();	
 $("#ex_display").append(exercises[pick][0]);
 });
 //hit Random Button
 $('#rand_kata_btn').on('click', function (){
-//$('#display').css({"background-image": "url(img/katabg.png"});
 var lgth=exercises.length-1;
 //pick random number
 pick=Math.floor((Math.random() * lgth) + 0);
 $("#ex_display").empty();	
 $("#ex_display").append(exercises[pick][0]);
 });
+
 // hit the START BUTTON
 $(document).on('click', '#start_btn', function () {
 prep_tabata(pick);
@@ -158,16 +157,17 @@ prep_tabata(pick);
 function prep_tabata(pick){
 //check if it is running. If yes, stop everything and clear display containers and continue from start
 if(running==true){
-ct=0;
-z=0;
-m=0;
-abortTimer();
+//ct=0;
+//z=0;
+//m=0;
+//abortTimer();
+stopall();
 
 //$('#ex_display').empty();
-$('#rd_counter').empty();
-$('#countdown').empty();
-$('.pulse').empty();
-$('#container').css("display", "none");
+//$('#rd_counter').empty();
+//$('#countdown').empty();
+//$('.pulse').empty();
+//$('#container').css("display", "none");
 
 var exc=pick;
 exercise(exc);
