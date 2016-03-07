@@ -162,7 +162,7 @@ if(running==true){
 //m=0;
 //abortTimer();
 stopall();
-
+m=0;
 //$('#ex_display').empty();
 //$('#rd_counter').empty();
 //$('#countdown').empty();
