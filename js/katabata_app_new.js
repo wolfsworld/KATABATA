@@ -157,18 +157,8 @@ prep_tabata(pick);
 function prep_tabata(pick){
 //check if it is running. If yes, stop everything and clear display containers and continue from start
 if(running==true){
-//ct=0;
-//z=0;
-//m=0;
-//abortTimer();
 stopall();
 m=0;
-//$('#ex_display').empty();
-//$('#rd_counter').empty();
-//$('#countdown').empty();
-//$('.pulse').empty();
-//$('#container').css("display", "none");
-
 var exc=pick;
 exercise(exc);
 }//end if running == true
