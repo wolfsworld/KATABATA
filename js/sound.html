@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+       $(document).ready(function () {
+ 
+            <!-- touch or click the page to play sound -->
+            $('body').on('click touchend', function(e){
+ 
+                //play sound 1
+                playSound(snd_someSound1);    
+ 
+                //play music at the same time on a loop
+                playSound(snd_someMusic1, 1, true);    
+ 
+            });
+        }); 
+ 
+            <script src="js/buffer-loader.js"></script>
+            <script src="js/web-audio-controller.js"></script>
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+	
+
+</body>
+</html>
